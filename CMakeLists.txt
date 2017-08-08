@@ -10,11 +10,31 @@ project(${PROJECT_NAME})
 
 message(">> Configure project ${PROJECT_NAME} for ${PLATFORM} platform")
 
-set(XT_SOURCES src)
-set(XT_INCLUDES src)
+set(XT_SOURCES
+        src
+        src/Core
+        src/Core/Render
+        src/Patterns)
 
-add_definitions(-DXT_PLATFORM="${PLATFORM}" -DXT_PROJECT_NAME="${PROJECT_NAME}")
+set(XT_INCLUDES src)
+#
+#   Linux
+set(XT_LINUX_DEPS glfw pthread dl rt GL)
+
+add_definitions(-DXT_PROJECT_NAME="${PROJECT_NAME}")
+
 include_directories(src)
+include_directories(src/3rd/glm)
+
+add_subdirectory(src/3rd/glm)
+
+if (${PLATFORM} STREQUAL "ANDROID")
+    include(cmake/Android.cmake)
+elseif(${PLATFORM} STREQUAL "LINUX")
+    include(cmake/Linux.cmake)
+else()
+    message(ERROR_FATAL "Unknown platform")
+endif()
 
 foreach(XT_PATH ${XT_SOURCES})
     file(GLOB XT_CPP_SRCS ${PROJECT_SOURCE_DIR}/${XT_PATH}/*.cpp)
@@ -24,16 +44,5 @@ foreach(XT_PATH ${XT_SOURCES})
     list(APPEND XT_SOURCE_FILES ${XT_H_SRCS})
 endforeach()
 
-list(LENGTH XT_SOURCE_FILES XT_SOURCES_LENGHT)
-
-message(">> Detected ${XT_SOURCES_LENGHT} source(s)")
-
-if (${PLATFORM} STREQUAL "ANDROID") #IOS in future
-    # We should build .so
-    message(">> Build .so")
-    add_library(${PROJECT_NAME} SHARED ${XT_SOURCE_FILES})
-else()
-    # Other platform, build executable
-    message(">> Build executable")
-    add_executable(${PROJECT_NAME} ${XT_SOURCE_FILES})
-endif()
+XtGenerate()
+target_link_libraries(${PROJECT_NAME} ${XT_DEPS})
