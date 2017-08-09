@@ -10,13 +10,11 @@ namespace platform {
     public:
         ~XtDefaultDevice() override;
 
-        bool createDevice() override;
+        bool createDevice(int width = XT_SCREEN_MIN_WIDTH, int height = XT_SCREEN_MIN_HEIGHT, bool fullscreen = false, bool reinit = false) override;
         void onDeviceUpdate(float delta) override;
         bool isDeviceActive() override;
-        void onScroll(double xOffset, double yOffset) override;
-        void onKeyboard(int key, int action, int mods) override;
-        void onTouch(const Vector<vec2>& touches) override;
         void onResize(int width, int height) override;
+        void switchFullscreenMode(bool mode) override;
         /**
          * GLFW Callbacks
          */

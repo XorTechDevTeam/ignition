@@ -53,7 +53,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 #undef XT_SCREEN_MIN_WIDTH
 #undef XT_SCREEN_MIN_HEIGHT
 
-#define XT_SCREEN_MIN_WIDTH  600
+#define XT_SCREEN_MIN_WIDTH  800
 #define XT_SCREEN_MIN_HEIGHT 600
 #endif
 

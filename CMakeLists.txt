@@ -14,6 +14,7 @@ set(XT_SOURCES
         src
         src/Core
         src/Core/Render
+        src/Core/Input
         src/Patterns)
 
 set(XT_INCLUDES src)

@@ -8,7 +8,7 @@ namespace xt {
             glfwTerminate();
         }
 
-        bool XtDefaultDevice::createDevice() {
+        bool XtDefaultDevice::createDevice(int width, int height, bool fullscreen, bool reinit) {
             if (!glfwInit()) {
                 //TODO: log here
                 return false;
@@ -21,7 +21,7 @@ namespace xt {
             glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
             glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-            _window = glfwCreateWindow(XT_SCREEN_MIN_WIDTH, XT_SCREEN_MIN_HEIGHT, XT_PROJECT_NAME, nullptr, nullptr);
+            _window = glfwCreateWindow(width, height, XT_PROJECT_NAME, fullscreen ? glfwGetPrimaryMonitor() : nullptr, nullptr);
             if (!_window)
             {
                 glfwTerminate();
@@ -31,7 +31,9 @@ namespace xt {
 
             glfwMakeContextCurrent(_window);
 
-            _renderDevice = new render::XtOpenGL();
+            if (!reinit) {
+                _renderDevice = new render::XtOpenGL(width, height);
+            }
 
             glfwSetKeyCallback(_window, &XtDefaultDevice::glfwOnKeyboardEvent);
             glfwSetMouseButtonCallback(_window, &XtDefaultDevice::glfwOnMouseInput);
@@ -51,20 +53,32 @@ namespace xt {
             return !static_cast<bool>(glfwWindowShouldClose(_window));
         }
 
-        void XtDefaultDevice::onScroll(double xOffset, double yOffset) {
-            //TODO: Send event to input system
-        }
-
-        void XtDefaultDevice::onKeyboard(int key, int action, int mods) {
-            //TODO: Send event to input system
-        }
-
-        void XtDefaultDevice::onTouch(const Vector<vec2> &touches) {
-            //TODO: Send event to input system
-        }
 
         void XtDefaultDevice::onResize(int width, int height) {
-            //TODO: Send event to input system
+            //TODO: log event here
+        }
+
+        void XtDefaultDevice::switchFullscreenMode(bool mode) {
+            if (mode && _renderDevice->isFullscreen()) return;
+
+            glfwDestroyWindow(_window);
+
+            int width = 0;
+            int height = 0;
+
+            if (mode) {
+                GLFWmonitor *pMonitor = glfwGetPrimaryMonitor();
+                const GLFWvidmode *vMode = glfwGetVideoMode(pMonitor);
+
+                width = vMode->width;
+                height = vMode->height;
+                _renderDevice->setFullscreen(mode);
+            } else {
+                _renderDevice->getScreenResolution(width, height);
+                _renderDevice->setFullscreen(mode);
+            }
+
+            createDevice(width, height, mode, true);
         }
 
         /**
@@ -72,24 +86,36 @@ namespace xt {
          */
 
         void XtDefaultDevice::glfwOnKeyboardEvent(GLFWwindow *window, int key, int scancode, int action, int mods) {
-            xt::XtEngine::getInstance()->getCurrentDevice()->onKeyboard(key, action, mods);
+            const KeyboardEvent keyboardEvent = {
+                    key,
+                    static_cast<bool>(mods & GLFW_MOD_ALT),
+                    static_cast<bool>(mods & GLFW_MOD_SHIFT),
+                    static_cast<bool>(mods & GLFW_MOD_SUPER),
+                    static_cast<bool>(mods & GLFW_MOD_CONTROL),
+                    action == GLFW_PRESS ? KeyboardEvent::PressType::PRESS_DOWN : KeyboardEvent::PressType::PRESS_UP
+            };
+
+            xt::XtEngine::getInstance()->getInputManager()->onKeyboardKey(keyboardEvent);
         }
 
         void XtDefaultDevice::glfwOnMouseInput(GLFWwindow *window, int button, int action, int mods) {
-            //TODO: Think about long taps and other combos
-            if (button == GLFW_MOUSE_BUTTON_LEFT) {
-                double x, y;
-                glfwGetCursorPos(window, &x, &y);
-                xt::XtEngine::getInstance()->getCurrentDevice()->onTouch({ vec2(x, y) });
-            }
+            double x = 0.0;
+            double y = 0.0;
+
+            const TapInfo::TapType tapType = action == GLFW_PRESS ? TapInfo::TapType::TAP_DOWN : TapInfo::TapType::TAP_UP;
+
+            glfwGetCursorPos(window, &x, &y);
+
+            const TapInfo tapInfo = { tapType, x, y };
+            xt::XtEngine::getInstance()->getInputManager()->onTouch({ tapInfo });
+        }
+
+        void XtDefaultDevice::glfwOnScroll(GLFWwindow *window, double xoffset, double yoffset) {
+            xt::XtEngine::getInstance()->getInputManager()->onScroll(xoffset, yoffset);
         }
 
         void XtDefaultDevice::glfwOnWindowResize(GLFWwindow *window, int width, int height) {
             xt::XtEngine::getInstance()->getCurrentDevice()->onResize(width, height);
-        }
-
-        void XtDefaultDevice::glfwOnScroll(GLFWwindow *window, double xoffset, double yoffset) {
-            xt::XtEngine::getInstance()->getCurrentDevice()->onScroll(xoffset, yoffset);
         }
     }
 }
