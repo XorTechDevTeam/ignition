@@ -7,21 +7,21 @@
 #include <Core/Render/IXtRenderDevice.h>
 
 namespace xt {
-    class IXtDevice {
+    class IXtPlatform {
     protected:
         render::IXtRenderDevice* _renderDevice = nullptr;
     public:
-        IXtDevice() =  default;
-        virtual ~IXtDevice() {
-            if (_renderDevice) {
+        IXtPlatform() =  default;
+        virtual ~IXtPlatform() {
+            if (_renderDevice != nullptr) {
                 delete _renderDevice;
                 _renderDevice = nullptr;
             }
         }
 
-        virtual bool createDevice(int width = XT_SCREEN_MIN_WIDTH, int height = XT_SCREEN_MIN_HEIGHT, bool fullscreen = false, bool reinit = false) = 0;
-        virtual void onDeviceUpdate(float delta) = 0;
-        virtual bool isDeviceActive() = 0;
+        virtual bool createDevice(int width, int height, bool fullscreen, bool reinit) = 0;
+        virtual void onDeviceUpdate() = 0;
+        virtual bool isTerminate() const = 0;
         virtual void onResize(int width, int height) = 0;
         virtual void switchFullscreenMode(bool mode) {}
 

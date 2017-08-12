@@ -40,6 +40,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 #include <queue>
 #include <thread>
 #include <mutex>
+#include <chrono>
 #include <algorithm>
 #include <functional>
 
@@ -55,6 +56,8 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
 #define XT_SCREEN_MIN_WIDTH  800
 #define XT_SCREEN_MIN_HEIGHT 600
+
+#include <Core/Platform/Linux/XtDefaultDevice.h>
 #endif
 
 /**

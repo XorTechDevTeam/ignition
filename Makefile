@@ -4,6 +4,10 @@ XT_PROJECT=XorTech
 all:
 	@echo "Usage:\n\tmake (LINUX|ANDROID|WINDOWS|OSX|IOS)"
 
+clean:
+    rm -rf build
+    mkdir build
+
 LINUX:
 	cmake . -B./build -DPLATFORM:STRING="LINUX" -DPROJECT_NAME:STRING=${XT_PROJECT}
 	cd build && make

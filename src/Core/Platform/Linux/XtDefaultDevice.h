@@ -1,18 +1,18 @@
 #pragma once
 
-#include <Core/IXtDevice.h>
+#include <Core/IXtPlatform.h>
 
 namespace xt {
 namespace platform {
-    class XtDefaultDevice : public xt::IXtDevice {
+    class XtDefaultDevice : public xt::IXtPlatform {
     private:
         GLFWwindow* _window;
     public:
         ~XtDefaultDevice() override;
 
-        bool createDevice(int width = XT_SCREEN_MIN_WIDTH, int height = XT_SCREEN_MIN_HEIGHT, bool fullscreen = false, bool reinit = false) override;
-        void onDeviceUpdate(float delta) override;
-        bool isDeviceActive() override;
+        bool createDevice(int width, int height, bool fullscreen, bool reinit) override;
+        void onDeviceUpdate() override;
+        bool isTerminate() const override;
         void onResize(int width, int height) override;
         void switchFullscreenMode(bool mode) override;
         /**

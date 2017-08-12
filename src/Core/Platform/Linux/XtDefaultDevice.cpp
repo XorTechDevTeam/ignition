@@ -43,14 +43,13 @@ namespace xt {
             return true;
         }
 
-        void XtDefaultDevice::onDeviceUpdate(float delta) {
-            _renderDevice->drawFrame(delta);
+        void XtDefaultDevice::onDeviceUpdate() {
             glfwSwapBuffers(_window);
             glfwPollEvents();
         }
 
-        bool XtDefaultDevice::isDeviceActive() {
-            return !static_cast<bool>(glfwWindowShouldClose(_window));
+        bool XtDefaultDevice::isTerminate() const {
+            return static_cast<bool>(glfwWindowShouldClose(_window));
         }
 
 
@@ -115,7 +114,7 @@ namespace xt {
         }
 
         void XtDefaultDevice::glfwOnWindowResize(GLFWwindow *window, int width, int height) {
-            xt::XtEngine::getInstance()->getCurrentDevice()->onResize(width, height);
+            xt::XtEngine::getInstance()->getCurrentPlatform()->onResize(width, height);
         }
     }
 }
