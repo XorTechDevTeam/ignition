@@ -42,6 +42,7 @@ namespace xt {
     }
 
     int XtEngine::run() {
+#if !defined(XT_ANDROID) && !defined(XT_IOS)
         double time = _systemTime->getTime();
 
         while (!_platform->isTerminate()) {
@@ -50,13 +51,18 @@ namespace xt {
 
             time = newTime;
 
-            if (_gameTime != nullptr) {
-                _gameTime->update();
-            }
+            this->update();
 
             _platform->onDeviceUpdate();
             _renderDevice->drawFrame(delta);
         }
+#endif
         return 0;
+    }
+
+    void XtEngine::update() {
+        if (_gameTime != nullptr) {
+            _gameTime->update();
+        }
     }
 }

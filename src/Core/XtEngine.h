@@ -28,6 +28,7 @@ namespace xt {
 
         bool init(const XtDeviceParams& deviceParams = XtDeviceParams());
         int run();
+        void update();
 
         IXtTime* getSystemTime() { return _systemTime; }
         IXtTime* getGameTime() { return _gameTime; }

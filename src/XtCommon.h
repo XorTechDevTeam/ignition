@@ -58,8 +58,16 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 #define XT_SCREEN_MIN_HEIGHT 600
 
 #include <Core/Platform/Linux/XtDefaultDevice.h>
+#include <Core/Platform/Linux/XtDebugDevice.h>
 #endif
 
+#if defined(XT_ANDROID)
+#include <unistd.h>
+
+#include <Core/Platform/Android/XtAndroidNative.h>
+#include <Core/Platform/Android/XtDefaultDevice.h>
+#include <Core/Platform/Android/XtDebugDevice.h>
+#endif
 /**
  * Custom aliases
  */

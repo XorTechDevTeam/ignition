@@ -5,14 +5,17 @@ all:
 	@echo "Usage:\n\tmake (LINUX|ANDROID|WINDOWS|OSX|IOS)"
 
 clean:
-    rm -rf build
-    mkdir build
+	rm -rf build
+	mkdir build
 
 LINUX:
 	cmake . -B./build -DPLATFORM:STRING="LINUX" -DPROJECT_NAME:STRING=${XT_PROJECT}
 	cd build && make
 
-ANDROID: NOT_SUPPORTED
+ANDROID:
+	cd android && ./gradlew assembleDebug
+	adb install -r ./android/app/build/outputs/apk/app-debug.apk
+
 WINDOWS: NOT_SUPPORTED
 OSX: NOT_SUPPORTED
 IOS: NOT_SUPPORTED

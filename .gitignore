@@ -1,2 +1,7 @@
 .idea/*
 build/*
+andoird/.idea
+android/.*
+android/build
+android/app/.*
+android/app/build
