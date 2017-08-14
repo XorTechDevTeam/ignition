@@ -13,7 +13,7 @@
 #elif defined(XT_WINDOWS)                       //Windows
 #include <Windows.h>
 
-int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+#define XT_ENTRY int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 #else
 #error Unsupported platform
 #endif
