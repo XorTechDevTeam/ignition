@@ -6,6 +6,9 @@
 #include <XtCommon.h>
 
 namespace xt {
+    /**
+     * @brief Базовые параметры рендера
+     */
     struct XtDeviceParams {
         int width;
         int height;
