@@ -27,4 +27,9 @@ public class XTGLESActivity extends Activity {
         super.onResume();
         mView.onResume();
     }
+
+    @Override protected void onDestroy() {
+        super.onDestroy();
+        XtEngine.xtOnDestroy();
+    }
 }

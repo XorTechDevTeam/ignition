@@ -9,22 +9,14 @@
 namespace xt {
 namespace platform {
     bool XtDefaultDevice::createDevice(int width, int height, bool fullscreen, bool reinit) {
-        if (!reinit) {
-            _renderDevice = new render::XtOpenGL(width, height);
-        }
         return true;
     }
 
     void XtDefaultDevice::onDeviceUpdate() {
-
-    }
-
-    bool XtDefaultDevice::isTerminate() const {
-        return false;
     }
 
     void XtDefaultDevice::onResize(int width, int height) {
-
+        xt::XtEngine::getInstance()->getRenderDevice()->changeViewport(width, height);
     }
 }
 }

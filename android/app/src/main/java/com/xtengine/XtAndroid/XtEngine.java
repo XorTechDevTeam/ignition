@@ -10,4 +10,5 @@ public class XtEngine {
 	public static native void xtUpdate();
 	public static native void xtOnPause();
 	public static native void xtOnResume();
+	public static native void xtOnDestroy();
 }
