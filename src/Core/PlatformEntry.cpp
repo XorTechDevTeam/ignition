@@ -6,15 +6,21 @@
 
 XT_ENTRY
 {
+    LOGMSG("*** XT ENTRY ***");
+
     xt::XtDeviceParams deviceParams = xt::platform::g_xtDebugDevice;
 
     if (!xt::XtEngine::getInstance()->init(deviceParams)) {
-        //TODO: log it
+        LOGMSG("Unable to init XtEngine");
         return -1;
     }
-    int exitCode = xt::XtEngine::getInstance()->run();
-#if !defined(XT_ANDROID) && !defined(XT_IOS)
+
+#if !defined(XT_ANDROID) && !defined(XT_IOS)    //У Android & IOS свои циклы
+    while (xt::XtEngine::getInstance()->isOnline()) {
+        xt::XtEngine::getInstance()->update();
+    }
+
     xt::XtEngine::release();
 #endif
-    return exitCode;
+    return 0;
 }

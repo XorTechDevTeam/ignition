@@ -112,14 +112,14 @@
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
-    <content url="file://$MODULE_DIR$/../../src/3rd/glm/glm/detail">
-      <sourceFolder url="file://$MODULE_DIR$/../../src/3rd/glm/glm/detail" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/../../src/Core">
       <sourceFolder url="file://$MODULE_DIR$/../../src/Core" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../src/Core/Input">
       <sourceFolder url="file://$MODULE_DIR$/../../src/Core/Input" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../src/Core/Log">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/Core/Log" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../src/Core/Platform/Android">
       <sourceFolder url="file://$MODULE_DIR$/../../src/Core/Platform/Android" isTestSource="false" />

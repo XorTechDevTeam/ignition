@@ -20,7 +20,7 @@ if (NOT PLATFORM STREQUAL "NONE")
             src/Core/Render
             src/Core/Input
             src/Core/Time
-            src/Patterns)
+            src/Core/Log)
 
     set(XT_INCLUDES src)
 
@@ -28,8 +28,6 @@ if (NOT PLATFORM STREQUAL "NONE")
 
     include_directories(src)
     include_directories(src/3rd/glm)
-
-    add_subdirectory(src/3rd/glm)
 
     if (PLATFORM STREQUAL "ANDROID")
         include(cmake/Android.cmake)

@@ -19,20 +19,23 @@ JNIEXPORT void JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtInit(JNIEnv * env,
 }
 
 JNIEXPORT void JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtUpdate(JNIEnv * env, jobject obj) {
-    IXtPlatform* platform = XtEngine::getInstance()->getCurrentPlatform();
-    IXtRenderDevice* render = nullptr;
-    if (platform && (render = platform->getRenderDevice())) {
-        XtEngine::getInstance()->update();
-        platform->onDeviceUpdate();
-        render->drawFrame(0.f);
-    }
+    //TODO: Iterate engine
+    xt::XtEngine::getInstance()->update();
 }
 
 JNIEXPORT void JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtOnPause(JNIEnv * env, jobject obj) {
-    //TODO: Call engine here
+    LOGMSG("*** Android::onPause called ***");
+    xt::XtEngine::getInstance()->pause();
 }
 
 JNIEXPORT void JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtOnResume(JNIEnv * env, jobject obj) {
-    //TODO: Call engine here
+    LOGMSG("*** Android::onResume called ***");
+    xt::XtEngine::getInstance()->resume();
+}
+
+JNIEXPORT void JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtOnDestroy(JNIEnv * env, jobject obj) {
+    LOGMSG("*** Android::onDestroy called ***");
+    xt::XtEngine::getInstance()->offline(); //close loop
+    xt::XtEngine::release();
 }
 #endif
