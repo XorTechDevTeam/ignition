@@ -3,6 +3,7 @@
  */
 #include "XtEngine.h"
 #include <Core/Time/XtSystemTime.h>
+#include <Modules/XtModuleManager.h>
 
 #if defined(XT_LINUX)
 #include <Core/Platform/Linux/XtDefaultDevice.h>
@@ -37,6 +38,8 @@ namespace xt {
         }
 
         _renderDevice = _platform->getRenderDevice();
+
+        xt::modules::XtModuleManager::getInstance()->init();
 
         return true;
     }

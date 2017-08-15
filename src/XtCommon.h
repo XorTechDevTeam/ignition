@@ -69,6 +69,7 @@ template <typename T> using Vector = std::vector<T>;
 template <typename T> using Queue = std::queue<T>;
 template <typename K, typename V> using Map = std::map<K, V>;
 template <typename K, typename V> using UnorderedMap = std::unordered_map<K, V>;
+template <typename K, typename V> using Pair = std::pair<K, V>;
 
 #include <glm/glm.hpp>
 using namespace glm;
