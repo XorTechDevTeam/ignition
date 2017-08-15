@@ -9,6 +9,7 @@
 #include <Core/IXtTime.h>
 #include <Core/XtDeviceParams.h>
 #include <XtCommon.h>
+#include "XtMetadata.h"
 
 namespace xt {
     using namespace input;
@@ -20,6 +21,8 @@ namespace xt {
         XtDeviceParams   _initParams;
         XtInputManager*  _inputManager;
         IXtRenderDevice* _renderDevice;
+
+        XtMetadata*     _metadata;
 
         IXtTime*        _systemTime;
         IXtTime*        _gameTime;

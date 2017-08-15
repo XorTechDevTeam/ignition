@@ -29,6 +29,7 @@ namespace xt {
         _platform = new xt::platform::XtDefaultDevice();
         _inputManager = new xt::input::XtInputManager();
         _systemTime = new xt::time::XtSystemTime();
+        _metadata = new xt::XtMetadata();
         _gameTime = nullptr;    //TODO: Create class for game time
 
         if (!_platform->createDevice(_initParams.width, _initParams.height, _initParams.fullscreen, false)) {
