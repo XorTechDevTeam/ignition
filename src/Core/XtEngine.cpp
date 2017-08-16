@@ -68,8 +68,9 @@ namespace xt {
 #if defined(XT_LINUX) || defined(XT_ANDROID) || defined(XT_IOS)
         _renderDevice = new xt::render::XtOpenGL(_initParams.width, _initParams.height);
 #else
-#error "DirectX render not supported yet"
+		_renderDevice = new xt::render::XtDirectX11(_initParams.width, _initParams.height, _initParams.fullscreen);
 #endif
+
         if (!_renderDevice->init()) {
             LOGMSG("Unable to init render device!");
             return false;

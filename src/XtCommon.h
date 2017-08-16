@@ -11,9 +11,18 @@
 #elif defined(XT_ANDROID) || defined(XT_IOS)    //Android & IOS
 #define XT_ENTRY int XT_main()
 #elif defined(XT_WINDOWS)                       //Windows
-#include <Windows.h>
+#	if XT_WINDOWS == WIN32
+#		include <Windows.h>
+namespace xt {
+	namespace win32 {
+		static HINSTANCE g_win32AppInstance = NULL;
+	}
+}
 
-#define XT_ENTRY int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+#		define XT_ENTRY int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+#	else
+#		error "UWP not supported yet"
+#	endif
 #else
 #error Unsupported platform
 #endif
@@ -68,6 +77,20 @@
 #include <Core/Platform/Android/XtDefaultDevice.h>
 #include <Core/Platform/Android/XtDebugDevice.h>
 #endif
+
+#if defined(XT_WINDOWS)
+
+#undef XT_SCREEN_MIN_WIDTH
+#undef XT_SCREEN_MIN_HEIGHT
+
+#define XT_SCREEN_MIN_WIDTH  1024
+#define XT_SCREEN_MIN_HEIGHT 768
+
+#include <Windows.h>
+
+#include <Core/Platform/Windows/XtDefaultDevice.h>
+#include <Core/Platform/Windows/XtDebugDevice.h>
+#endif
 /**
  * Custom aliases
  */
@@ -91,4 +114,8 @@ using namespace glm;
 
 #if (defined(XT_LINUX) || defined(XT_ANDROID) || defined(XT_IOS)) && !defined(XT_USE_VULKAN) && !defined(XT_USE_METAL)
 #include <Core/Render/OpenGL/XtOpenGL.h>
+#elif defined(XT_WINDOWS)
+#include <Core/Render/DirectX/XtDirectX11.h>
+#else
+#error "Not supported"
 #endif

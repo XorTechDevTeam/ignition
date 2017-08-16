@@ -6,6 +6,10 @@
 
 XT_ENTRY
 {
+#if defined(XT_WINDOWS) && XT_WINDOWS == WIN32
+	xt::win32::g_win32AppInstance = hInstance;
+#endif
+
     LOGMSG("*** XT ENTRY ***");
 
     xt::XtDeviceParams deviceParams = xt::platform::g_xtDebugDevice;
