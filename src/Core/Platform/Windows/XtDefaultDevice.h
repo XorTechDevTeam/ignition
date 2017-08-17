@@ -15,6 +15,8 @@ namespace platform {
         bool createDevice(int width, int height, bool fullscreen, bool reinit) override;
         void onDeviceUpdate() override;
         void onResize(int width, int height) override;
+
+		XtWindowInstance* getCurrentWindow() { return _wndInstance; }
     };
 }
 }

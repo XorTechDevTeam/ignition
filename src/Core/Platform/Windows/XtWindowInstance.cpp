@@ -4,12 +4,36 @@
 
 #define XT_WIN32CLASSID "XorTechWin32ApplicationClass"
 #define XT_WIN32CLASSEX (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX)
+#define XT_EVMASK 0xFFF0
 
 LRESULT CALLBACK XtWin32EventProcessCallback(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+	xt::XtEngine* pEngine = xt::XtEngine::getInstance();
+	const UINT pEvent = (wParam & XT_EVMASK);
+
 	switch (uMsg) {
 	case WM_DESTROY:
 		xt::XtEngine::getInstance()->offline();
-		return DefWindowProc(hwnd, uMsg, wParam, lParam);
+		PostQuitMessage(0);
+		break;
+	case WM_PAINT:
+		if (pEngine->isActive()) {
+			double lastTime = pEngine->getLastFrameTime();
+			double nowTime = pEngine->getSystemTime()->getTime();
+			const float delta = static_cast<float>(nowTime - lastTime);
+
+			pEngine->setLastFrameTime(nowTime);
+			pEngine->getRenderDevice()->drawFrame(delta);
+		}
+		break;
+	case WM_SYSCOMMAND:
+		switch (pEvent) {
+		case SC_MINIMIZE:
+			pEngine->pause();
+			break;
+		case SC_MAXIMIZE:
+			pEngine->resume();
+			break;
+		}
 		break;
 	}
 

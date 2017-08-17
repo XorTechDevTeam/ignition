@@ -21,7 +21,7 @@ XT_ENTRY
 
 #if !defined(XT_ANDROID) && !defined(XT_IOS)    //У Android & IOS свои циклы
     while (xt::XtEngine::getInstance()->isOnline()) {
-        xt::XtEngine::getInstance()->update();
+		xt::XtEngine::getInstance()->update();
     }
 
     xt::XtEngine::release();

@@ -81,17 +81,25 @@ namespace xt {
 
     void XtEngine::update() {
         if (_isActive) {
+#if !defined(XT_WINDOWS)
             const double newTime = _systemTime->getTime();
             const float delta = static_cast<float>(newTime - _lastFrameTime);
 
             _lastFrameTime = newTime;
 
-            if (_gameTime) {
-                _gameTime->update();
-            }
+			if (_gameTime) {
+				_gameTime->update();
+			}
 
-            _platform->onDeviceUpdate();
-            _renderDevice->drawFrame(delta);
+			_platform->onDeviceUpdate();
+			_renderDevice->drawFrame(delta);
+#else
+			if (_gameTime) {
+				_gameTime->update();
+			}
+
+			_platform->onDeviceUpdate();
+#endif
         }
     }
 

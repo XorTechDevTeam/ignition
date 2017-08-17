@@ -13,6 +13,8 @@ namespace platform {
 
 		bool createWindow(const std::string& title, int width, int height);
 		void update();
+
+		HWND getHandle() const { return _handle; }
 	};
 }
 }

@@ -17,7 +17,9 @@ namespace xt {
         }
 
         void XtDefaultDevice::onDeviceUpdate() {
-			if (_wndInstance) _wndInstance->update();
+			if (_wndInstance) {
+				_wndInstance->update();
+			}
         }
 
         void XtDefaultDevice::onResize(int width, int height) {

@@ -11,8 +11,19 @@
 #elif defined(XT_ANDROID) || defined(XT_IOS)    //Android & IOS
 #define XT_ENTRY int XT_main()
 #elif defined(XT_WINDOWS)                       //Windows
+// DxSDK Warnings
+#	pragma warning( disable : 4005 )
+#	pragma warning( disable : 4302 )
+
 #	if XT_WINDOWS == WIN32
 #		include <Windows.h>
+//
+//	DirectX SDK
+#		include <dxgi.h>
+#		include <d3dcommon.h>
+#		include <d3d11.h>
+#		include <d3dx10math.h>
+
 namespace xt {
 	namespace win32 {
 		static HINSTANCE g_win32AppInstance = NULL;
