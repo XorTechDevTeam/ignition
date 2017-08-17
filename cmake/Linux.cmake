@@ -2,6 +2,7 @@ add_definitions(-DXT_LINUX)
 list(APPEND XT_SOURCES
         src/Core/Platform/Linux
         src/Core/Render/OpenGL)
+set(XT_LINUX_DEPS glfw pthread dl rt GL)
 
 macro(XtGenerate)
     list(APPEND XT_DEPS ${XT_LINUX_DEPS})

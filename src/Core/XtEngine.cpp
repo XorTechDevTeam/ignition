@@ -80,7 +80,7 @@ namespace xt {
     void XtEngine::update() {
         if (_isActive) {
             const double newTime = _systemTime->getTime();
-            const float delta = static_cast<float>(newTime - _lastFrameTime);
+            const float delta  = static_cast<float>(newTime - _lastFrameTime);
 
             _lastFrameTime = newTime;
 

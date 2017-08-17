@@ -58,8 +58,16 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 #define XT_SCREEN_MIN_HEIGHT 600
 
 #include <Core/Platform/Linux/XtDefaultDevice.h>
+#include <Core/Platform/Linux/XtDebugDevice.h>
 #endif
 
+#if defined(XT_ANDROID)
+#include <unistd.h>
+
+#include <Core/Platform/Android/XtAndroidNative.h>
+#include <Core/Platform/Android/XtDefaultDevice.h>
+#include <Core/Platform/Android/XtDebugDevice.h>
+#endif
 /**
  * Custom aliases
  */
@@ -72,6 +80,9 @@ template <typename K, typename V> using UnorderedMap = std::unordered_map<K, V>;
 
 #include <glm/glm.hpp>
 using namespace glm;
+
+typedef size_t z_size_t;
+#include <zlib.h>
 
 #include <Core/Log/XtLogManager.h>
 
