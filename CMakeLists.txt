@@ -23,14 +23,16 @@ set(XT_SOURCES
 set(XT_INCLUDES src)
 #
 #   Linux
-set(XT_LINUX_DEPS glfw pthread dl rt GL)
+set(XT_LINUX_DEPS glfw pthread dl rt GL angelscript)
 
 add_definitions(-DXT_PROJECT_NAME="${PROJECT_NAME}")
 
 include_directories(src)
 include_directories(src/3rd/glm)
+include_directories(src/3rd/AngelScript)
 
 add_subdirectory(src/3rd/glm)
+add_subdirectory(src/3rd/AngelScript/projects/cmake)
 
 if (${PLATFORM} STREQUAL "ANDROID")
     include(cmake/Android.cmake)
