@@ -11,19 +11,28 @@
 
 #include <XtCommon.h>
 #include <Modules/XtModuleCommon.h>
-
 #include <Modules/XtModule.h>
 
 namespace xt {
     namespace modules {
-        class XtModuleManager : public patterns::XtSingleton<XtModuleManager> {
+        class XtModuleManager  {
         private:
+            static XtModuleManager *_instance;
             Vector<XtModule*> modules;
+
+            XtModuleManager();
+            ~XtModuleManager();
         public:
-            ~XtModuleManager() override;
+            static XtModuleManager *getInstance();
+            static void release();
+
+            XtModuleManager(const XtModuleManager& copy)            = delete;
+            XtModuleManager(const XtModuleManager&& move)           = delete;
+            XtModuleManager& operator=(const XtModuleManager& copy) = delete;
+            XtModuleManager& operator=(XtModuleManager&& move)      = delete;
 
             int init();
-            mod_rc addModule(XtModule *module);
+            XtModRC addModule(XtModule *module);
         };
     }
 }

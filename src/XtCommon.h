@@ -74,4 +74,14 @@ template <typename K, typename V> using Pair = std::pair<K, V>;
 #include <glm/glm.hpp>
 using namespace glm;
 
-#include <Patterns/XtSingleton.h>
+#include <Core/Log/XtLogManager.h>
+
+#ifndef NDEBUG
+#define LOGMSG(format, ...) (xt::log::XtLogManager::getInstance()->operator()(format, ##__VA_ARGS__))
+#else
+#define LOGMSG(format, ...)
+#endif
+
+#if (defined(XT_LINUX) || defined(XT_ANDROID) || defined(XT_IOS)) && !defined(XT_USE_VULKAN) && !defined(XT_USE_METAL)
+#include <Core/Render/OpenGL/XtOpenGL.h>
+#endif

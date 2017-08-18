@@ -15,7 +15,7 @@ void XtLogic::messageCallback(const asSMessageInfo *msg, void *param) {
 
 XtLogic::XtLogic() {
     this->asEngine = asCreateScriptEngine();
-    this->asEngine->SetMessageCallback(asFUNCTION(XtLogic::messageCallback),nullptr, asXTCALL);
+    this->asEngine->SetMessageCallback(asMETHOD(XtLogic,messageCallback), nullptr, asCALL_THISCALL);
 }
 
 XtLogic::~XtLogic() {

@@ -27,7 +27,7 @@ namespace xt {
 		public:
 			//static XtModule *getInstance();
             virtual int init() = 0;
-            mod_rc linkModule();
+            XtModRC linkModule();
             XtDependencyUnit *getDependencies();
 
 			void sendEvent(event::XtEvent *ev);

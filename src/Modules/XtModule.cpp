@@ -8,8 +8,8 @@
 using namespace xt;
 using namespace modules;
 
-mod_rc XtModule::linkModule() {
-    mod_rc rc = XtModuleManager::getInstance()->addModule(this);
+XtModRC XtModule::linkModule() {
+    XtModRC rc = XtModuleManager::getInstance()->addModule(this);
 
     switch (rc) {
         case RC_OK:

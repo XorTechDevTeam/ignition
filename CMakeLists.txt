@@ -21,8 +21,8 @@ set(XT_SOURCES
         src/Core/Time
         src/Core/Event
         src/Core/Logic
-        src/Modules
-        src/Patterns)
+        src/Core/Log
+        src/Modules)
 
 set(XT_INCLUDES src)
 #
@@ -35,7 +35,6 @@ include_directories(src)
 include_directories(src/3rd/glm)
 include_directories(src/3rd/AngelScript/include)
 
-add_subdirectory(src/3rd/glm)
 add_subdirectory(src/3rd/AngelScript/projects/cmake)
 
 if (${PLATFORM} STREQUAL "ANDROID")
@@ -52,6 +51,10 @@ foreach(XT_PATH ${XT_SOURCES})
     # ... here you can add custom type like hpp, hxx, hui and etc.
     list(APPEND XT_SOURCE_FILES ${XT_CPP_SRCS})
     list(APPEND XT_SOURCE_FILES ${XT_H_SRCS})
+endforeach()
+
+foreach(PATH ${XT_SOURCE_FILES})
+    message(STATUS "Compile ${PATH}")
 endforeach()
 
 XtGenerate()

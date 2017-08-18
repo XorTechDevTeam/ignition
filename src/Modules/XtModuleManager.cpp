@@ -8,9 +8,27 @@
 using namespace xt;
 using namespace modules;
 
+XtModuleManager::XtModuleManager() {
+
+}
+
 XtModuleManager::~XtModuleManager() {
     for (auto &module : this->modules) {
         delete module;
+    }
+}
+
+XtModuleManager * XtModuleManager::getInstance() {
+    if (!_instance) {
+        _instance = new XtModuleManager();
+    }
+    return _instance;
+}
+
+void XtModuleManager::release() {
+    if (_instance) {
+        delete _instance;
+        _instance = nullptr;
     }
 }
 
@@ -20,7 +38,7 @@ int XtModuleManager::init() {
     return 0;
 }
 
-mod_rc XtModuleManager::addModule(XtModule *module) {
+XtModRC XtModuleManager::addModule(XtModule *module) {
     this->modules.push_back(module);
 
     XtDependencyUnit *deps = module->getDependencies();
@@ -42,3 +60,5 @@ mod_rc XtModuleManager::addModule(XtModule *module) {
 
     return RC_OK;
 }
+
+XtModuleManager *XtModuleManager::_instance = nullptr;

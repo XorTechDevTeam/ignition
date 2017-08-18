@@ -10,7 +10,7 @@ namespace xt {
 
         bool XtDefaultDevice::createDevice(int width, int height, bool fullscreen, bool reinit) {
             if (!glfwInit()) {
-                //TODO: log here
+                LOGMSG("Unable to init GLFW");
                 return false;
             }
 
@@ -25,20 +25,17 @@ namespace xt {
             if (!_window)
             {
                 glfwTerminate();
-                //TODO: log error
+                LOGMSG("Unable to init GLFW window context");
                 return false;
             }
 
             glfwMakeContextCurrent(_window);
 
-            if (!reinit) {
-                _renderDevice = new render::XtOpenGL(width, height);
-            }
-
             glfwSetKeyCallback(_window, &XtDefaultDevice::glfwOnKeyboardEvent);
             glfwSetMouseButtonCallback(_window, &XtDefaultDevice::glfwOnMouseInput);
             glfwSetWindowSizeCallback(_window, &XtDefaultDevice::glfwOnWindowResize);
             glfwSetScrollCallback(_window, &XtDefaultDevice::glfwOnScroll);
+            glfwSetWindowCloseCallback(_window, &XtDefaultDevice::glfwCloseApplication);
 
             return true;
         }
@@ -54,30 +51,11 @@ namespace xt {
 
 
         void XtDefaultDevice::onResize(int width, int height) {
-            //TODO: log event here
-        }
-
-        void XtDefaultDevice::switchFullscreenMode(bool mode) {
-            if (mode && _renderDevice->isFullscreen()) return;
-
-            glfwDestroyWindow(_window);
-
-            int width = 0;
-            int height = 0;
-
-            if (mode) {
-                GLFWmonitor *pMonitor = glfwGetPrimaryMonitor();
-                const GLFWvidmode *vMode = glfwGetVideoMode(pMonitor);
-
-                width = vMode->width;
-                height = vMode->height;
-                _renderDevice->setFullscreen(mode);
-            } else {
-                _renderDevice->getScreenResolution(width, height);
-                _renderDevice->setFullscreen(mode);
+            LOGMSG("UI::Resize(%d;%d)", width, height);
+            auto renderDevice = xt::XtEngine::getInstance()->getRenderDevice();
+            if (renderDevice) {
+                renderDevice->changeViewport(width, height);
             }
-
-            createDevice(width, height, mode, true);
         }
 
         /**
@@ -115,6 +93,10 @@ namespace xt {
 
         void XtDefaultDevice::glfwOnWindowResize(GLFWwindow *window, int width, int height) {
             xt::XtEngine::getInstance()->getCurrentPlatform()->onResize(width, height);
+        }
+
+        void XtDefaultDevice::glfwCloseApplication(GLFWwindow *window) {
+            xt::XtEngine::getInstance()->offline();
         }
     }
 }

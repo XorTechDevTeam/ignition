@@ -10,7 +10,7 @@
 
 namespace xt {
     namespace modules {
-        enum mod_rc {
+        enum XtModRC {
             RC_OK, //module successfully linked into manager
             RC_UNRSLV_DEP, //module has an unresolved dependency
             RC_FAIL //any other error

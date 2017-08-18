@@ -14,7 +14,6 @@ namespace platform {
         void onDeviceUpdate() override;
         bool isTerminate() const override;
         void onResize(int width, int height) override;
-        void switchFullscreenMode(bool mode) override;
         /**
          * GLFW Callbacks
          */
@@ -22,6 +21,7 @@ namespace platform {
         static void glfwOnMouseInput(GLFWwindow* window, int button, int action, int mods);
         static void glfwOnWindowResize(GLFWwindow* window, int width, int height);
         static void glfwOnScroll(GLFWwindow* window, double xoffset, double yoffset);
+        static void glfwCloseApplication(GLFWwindow* window);
     };
 }
 }
