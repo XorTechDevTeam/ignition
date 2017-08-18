@@ -8,6 +8,11 @@
 
 #pragma once
 
+#include <Core/Logic/XtCall.h>
+#include <Core/Logic/XtLogic.h>
+
+#define XTLOGIC xt::logic::XtLogic::getInstance()
+
 namespace xt {
     namespace modules {
         enum XtModRC {

@@ -33,12 +33,16 @@ void XtModuleManager::release() {
 }
 
 int XtModuleManager::init() {
-    this->addModule(XtNullModule::getInstance());
+    LOGMSG("[XtModuleManager]: initializing...");
+    XtNullModule::getInstance()->init();
+
+    LOGMSG("[XtModuleManager]: loaded %d modules.", this->modules.size());
 
     return 0;
 }
 
 XtModRC XtModuleManager::addModule(XtModule *module) {
+    LOGMSG("[XtModuleManager]: linking module %s...", module->getName().c_str());
     this->modules.push_back(module);
 
     XtDependencyUnit *deps = module->getDependencies();
@@ -55,7 +59,10 @@ XtModRC XtModuleManager::addModule(XtModule *module) {
             }
         }
 
-        if (dep == 0) return RC_UNRSLV_DEP;
+        if (dep == 0) {
+            LOGMSG("[XtModuleManager]: unable to resolve dependency '%s'.", cur->first.c_str());
+            return RC_UNRSLV_DEP;
+        }
     }
 
     return RC_OK;

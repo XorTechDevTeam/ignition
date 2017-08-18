@@ -4,6 +4,10 @@
 
 #include "XtNullModule.h"
 
+void XTCALL whatAmIDoingHere() {
+    LOGMSG("Well, you wanted me to do nothing, I'm doing nothing.");
+}
+
 using namespace xt;
 using namespace modules;
 
@@ -16,9 +20,11 @@ XtModule * XtNullModule::getInstance() {
 }
 
 int XtNullModule::init() {
+    XTLOGIC->registerFunction("void whatAmIDoingHere()", asFUNCTION(whatAmIDoingHere));
+    this->linkModule();
     return 0;
 }
 
 void XtNullModule::handleEvent(event::XtEvent *ev) {
-    //TODO: well, why not log about it?
+    LOGMSG("Module nothing received an event. How is that even possible?");
 }

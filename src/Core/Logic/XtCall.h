@@ -8,6 +8,6 @@
 #define XTCALL __stdcall
 #define asXTCALL asCALL_STDCALL
 #else
-#define XTCALL __cdecl
+#define XTCALL /**/
 #define asXTCALL asCALL_CDECL
 #endif

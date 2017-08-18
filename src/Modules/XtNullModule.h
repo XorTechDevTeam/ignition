@@ -15,15 +15,13 @@
 
 #include <Modules/XtModule.h>
 
-namespace xt {
-    namespace modules {
-        class XtNullModule : public XtModule {
-        private:
-            XtNullModule();
-        public:
-            static XtModule *getInstance();
-            int init() final;
-            void handleEvent(event::XtEvent *ev) final;
-        };
-    }
-}
+void XTCALL whatAmIDoingHere();
+
+class XtNullModule : public xt::modules::XtModule {
+private:
+    XtNullModule();
+public:
+    static xt::modules::XtModule *getInstance();
+    int init() final;
+    void handleEvent(xt::event::XtEvent *ev) final;
+};

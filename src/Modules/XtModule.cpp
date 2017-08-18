@@ -13,13 +13,13 @@ XtModRC XtModule::linkModule() {
 
     switch (rc) {
         case RC_OK:
-            //TODO: log about it =3
+            LOGMSG("[%s]: linked successfully.", this->moduleName.c_str());
             break;
         case RC_UNRSLV_DEP:
-            //TODO: log about an unresolved dependency and crash
+            LOGMSG("[%s]: this module has an unresolved dependency!", this->moduleName.c_str());
             break;
         case RC_FAIL:
-            //TODO: critically crash
+            LOGMSG("[%s]: ERROR INITIALIZING MODULE", this->moduleName.c_str());
             break;
     }
 
