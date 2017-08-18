@@ -10,6 +10,9 @@ project(${PROJECT_NAME})
 
 message(">> Configure project ${PROJECT_NAME} for ${PLATFORM} platform")
 
+set(XT_DEPS
+        angelscript)
+
 set(XT_SOURCES
         src
         src/Core
@@ -17,19 +20,20 @@ set(XT_SOURCES
         src/Core/Input
         src/Core/Time
         src/Core/Event
+        src/Core/Logic
         src/Modules
         src/Patterns)
 
 set(XT_INCLUDES src)
 #
 #   Linux
-set(XT_LINUX_DEPS glfw pthread dl rt GL angelscript)
+set(XT_LINUX_DEPS glfw pthread dl rt GL)
 
 add_definitions(-DXT_PROJECT_NAME="${PROJECT_NAME}")
 
 include_directories(src)
 include_directories(src/3rd/glm)
-include_directories(src/3rd/AngelScript)
+include_directories(src/3rd/AngelScript/include)
 
 add_subdirectory(src/3rd/glm)
 add_subdirectory(src/3rd/AngelScript/projects/cmake)
