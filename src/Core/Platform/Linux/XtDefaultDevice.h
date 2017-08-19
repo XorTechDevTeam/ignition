@@ -12,7 +12,6 @@ namespace platform {
 
         bool createDevice(int width, int height, bool fullscreen, bool reinit) override;
         void onDeviceUpdate() override;
-        bool isTerminate() const override;
         void onResize(int width, int height) override;
         /**
          * GLFW Callbacks

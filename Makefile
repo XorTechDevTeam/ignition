@@ -2,18 +2,34 @@
 XT_PROJECT=XorTech
 
 all:
-	@echo "Usage:\n\tmake (LINUX|ANDROID|WINDOWS|OSX|IOS)"
+	@echo "Usage: make (LINUX|ANDROID|WINDOWS|OSX|IOS)"
 
 clean:
-    rm -rf build
-    mkdir build
+	@echo "Clean common build"
+	rm -rf build
+	mkdir build
+	@echo "Clean android"
+	cd android && ./gradlew clean
 
 LINUX:
-	cmake . -B./build -DPLATFORM:STRING="LINUX" -DPROJECT_NAME:STRING=${XT_PROJECT}
-	cd build && make
+	cmake . -B./build/Linux -DPLATFORM:STRING="LINUX" -DPROJECT_NAME:STRING=${XT_PROJECT}
+	cd build/Linux && make
 
-ANDROID: NOT_SUPPORTED
-WINDOWS: NOT_SUPPORTED
+ANDROID:
+	cd android && ./gradlew assembleDebug
+	adb install -r ./android/app/build/outputs/apk/app-debug.apk
+
+WIN32:
+	cmake . -B./build/Win32 -DPLATFORM:STRING="WIN32" -DPROJECT_NAME:STRING=${XT_PROJECT}
+	@echo "Use Microsoft Visual Studio to continue"
+
+WINUWP:
+	cmake . -B./build/WinUWP -DPLATFORM:STRING="WINUWP" -DPROJECT_NAME:STRING=${XT_PROJECT}
+	@echo "Use Microsoft Visual Studio to continue"
+
+WINDOWS:
+	@echo "Please, use target WIN32 or WINUWP"
+	
 OSX: NOT_SUPPORTED
 IOS: NOT_SUPPORTED
 

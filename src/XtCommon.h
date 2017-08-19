@@ -11,9 +11,29 @@
 #elif defined(XT_ANDROID) || defined(XT_IOS)    //Android & IOS
 #define XT_ENTRY int XT_main()
 #elif defined(XT_WINDOWS)                       //Windows
-#include <Windows.h>
+// DxSDK Warnings
+#	pragma warning( disable : 4005 )
+#	pragma warning( disable : 4302 )
 
-int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+#	if XT_WINDOWS == WIN32
+#		include <Windows.h>
+//
+//	DirectX SDK
+#		include <dxgi.h>
+#		include <d3dcommon.h>
+#		include <d3d11.h>
+#		include <d3dx10math.h>
+
+namespace xt {
+	namespace win32 {
+		static HINSTANCE g_win32AppInstance = NULL;
+	}
+}
+
+#		define XT_ENTRY int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+#	else
+#		error "UWP not supported yet"
+#	endif
 #else
 #error Unsupported platform
 #endif
@@ -59,9 +79,30 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 #define XT_SCREEN_MIN_HEIGHT 600
 
 #include <Core/Platform/Linux/XtDefaultDevice.h>
-
+#include <Core/Platform/Linux/XtDebugDevice.h>
 #endif
 
+#if defined(XT_ANDROID)
+#include <unistd.h>
+
+#include <Core/Platform/Android/XtAndroidNative.h>
+#include <Core/Platform/Android/XtDefaultDevice.h>
+#include <Core/Platform/Android/XtDebugDevice.h>
+#endif
+
+#if defined(XT_WINDOWS)
+
+#undef XT_SCREEN_MIN_WIDTH
+#undef XT_SCREEN_MIN_HEIGHT
+
+#define XT_SCREEN_MIN_WIDTH  1024
+#define XT_SCREEN_MIN_HEIGHT 768
+
+#include <Windows.h>
+
+#include <Core/Platform/Windows/XtDefaultDevice.h>
+#include <Core/Platform/Windows/XtDebugDevice.h>
+#endif
 /**
  * Custom aliases
  */
@@ -77,6 +118,8 @@ template <typename K, typename V> using Pair = std::pair<K, V>;
 #include <glm/glm.hpp>
 using namespace glm;
 
+#include <zlib.h>
+
 #include <Core/Log/XtLogManager.h>
 
 #ifndef NDEBUG
@@ -87,4 +130,8 @@ using namespace glm;
 
 #if (defined(XT_LINUX) || defined(XT_ANDROID) || defined(XT_IOS)) && !defined(XT_USE_VULKAN) && !defined(XT_USE_METAL)
 #include <Core/Render/OpenGL/XtOpenGL.h>
+#elif defined(XT_WINDOWS)
+#include <Core/Render/DirectX/XtDirectX11.h>
+#else
+#error "Not supported"
 #endif

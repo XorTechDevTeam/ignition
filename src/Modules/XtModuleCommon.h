@@ -15,10 +15,14 @@
 
 namespace xt {
     namespace modules {
+        /**
+         * Return code for module linking.
+         * Has three values of different fail severity.
+         */
         enum XtModRC {
-            RC_OK, //module successfully linked into manager
-            RC_UNRSLV_DEP, //module has an unresolved dependency
-            RC_FAIL //any other error
+            RC_OK, /**< Module successfully linked into manager. */
+            RC_UNRSLV_DEP, /**< Module has an unresolved dependency. */
+            RC_FAIL /**< Any other error. */
         };
     }
 }

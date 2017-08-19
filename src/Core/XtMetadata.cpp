@@ -44,7 +44,7 @@ void XtMetadata::init() {
     this->xorTechVerMinor = XT_VERSION_MINOR;
 }
 
-PlatformType XtMetadata::getPlatformName() const {
+XtPlatformType XtMetadata::getPlatformName() const {
     return platformName;
 }
 
