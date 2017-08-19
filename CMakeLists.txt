@@ -67,18 +67,3 @@ if (NOT PLATFORM STREQUAL "NONE")
 else()
     message(ERROR_FATAL "Unknown platform")
 endif()
-
-foreach(XT_PATH ${XT_SOURCES})
-    file(GLOB XT_CPP_SRCS ${PROJECT_SOURCE_DIR}/${XT_PATH}/*.cpp)
-    file(GLOB XT_H_SRCS ${PROJECT_SOURCE_DIR}/${XT_PATH}/*.h)
-    # ... here you can add custom type like hpp, hxx, hui and etc.
-    list(APPEND XT_SOURCE_FILES ${XT_CPP_SRCS})
-    list(APPEND XT_SOURCE_FILES ${XT_H_SRCS})
-endforeach()
-
-foreach(PATH ${XT_SOURCE_FILES})
-    message(STATUS "Compile ${PATH}")
-endforeach()
-
-XtGenerate()
-target_link_libraries(${PROJECT_NAME} ${XT_DEPS})
