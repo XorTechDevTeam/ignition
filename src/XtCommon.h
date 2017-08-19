@@ -118,6 +118,8 @@ template <typename K, typename V> using Pair = std::pair<K, V>;
 #include <glm/glm.hpp>
 using namespace glm;
 
+#include <zlib.h>
+
 #include <Core/Log/XtLogManager.h>
 
 #ifndef NDEBUG

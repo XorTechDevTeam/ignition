@@ -10,3 +10,6 @@
 [submodule "src/3rd/AngelScript"]
 	path = src/3rd/AngelScript
 	url = https://github.com/DronCode/angelscript
+[submodule "src/3rd/zlib"]
+	path = src/3rd/zlib
+	url = https://github.com/madler/zlib

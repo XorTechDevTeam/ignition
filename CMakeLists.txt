@@ -14,7 +14,7 @@ set(PROJECT_NAME "XorTech" CACHE STRING "Project name")
 project(${PROJECT_NAME})
 
 if (NOT PLATFORM STREQUAL "NONE")
-    set(XT_DEPS angelscript)
+    set(XT_DEPS angelscript zlibstatic)
     
     message(">> ----------------------------------------------------------")
     message(">> Configure project ${PROJECT_NAME} for ${PLATFORM} platform")
@@ -38,8 +38,11 @@ if (NOT PLATFORM STREQUAL "NONE")
     include_directories(src)
     include_directories(src/3rd/glm)
     include_directories(src/3rd/AngelScript/include)
-
+	include_directories(src/3rd/zlib)
+    include_directories(${CMAKE_CURRENT_BINARY_DIR}/src/3rd/zlib)
+    
     add_subdirectory(src/3rd/AngelScript/projects/cmake)
+    add_subdirectory(src/3rd/zlib)
 
     if (PLATFORM STREQUAL "ANDROID")
         message(STATUS ">> Include build scripts for Android")
