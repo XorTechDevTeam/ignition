@@ -3,6 +3,8 @@
  */
 #include "XtEngine.h"
 #include <Core/Time/XtSystemTime.h>
+#include <Core/Logic/XtLogic.h>
+#include <Modules/XtModuleManager.h>
 
 #if defined(XT_LINUX)
 #include <Core/Platform/Linux/XtDefaultDevice.h>
@@ -35,6 +37,9 @@ namespace xt {
             delete _systemTime;
             _systemTime = nullptr;
         }
+
+        xt::logic::XtLogic::release();
+        xt::modules::XtModuleManager::release();
     }
 
     XtEngine* XtEngine::getInstance() {
@@ -60,6 +65,10 @@ namespace xt {
         _gameTime = nullptr;
         _lastFrameTime = _systemTime->getTime();
 
+        _metadata = new xt::XtMetadata();
+        _gameTime = nullptr;    //TODO: Create class for game time
+        _lastFrameTime = _systemTime->getTime();
+        
         if (!_platform->createDevice(_initParams.width, _initParams.height, _initParams.fullscreen, false)) {
             LOGMSG("Unable to create platform device!");
             return false;
@@ -76,29 +85,31 @@ namespace xt {
             return false;
         }
 
+        /**
+         * @TODO: fix init & add check result
+         */
+        xt::logic::XtLogic::getInstance();
+        xt::modules::XtModuleManager::getInstance()->init();
+
         return true;
     }
 
     void XtEngine::update() {
         if (_isActive) {
+			if (_gameTime) {
+				_gameTime->update();
+			}
+
+			_platform->onDeviceUpdate();
+			xt::modules::XtModuleManager::getInstance()->resolveEvents();
+
 #if !defined(XT_WINDOWS)
             const double newTime = _systemTime->getTime();
             const float delta = static_cast<float>(newTime - _lastFrameTime);
 
             _lastFrameTime = newTime;
 
-			if (_gameTime) {
-				_gameTime->update();
-			}
-
-			_platform->onDeviceUpdate();
 			_renderDevice->drawFrame(delta);
-#else
-			if (_gameTime) {
-				_gameTime->update();
-			}
-
-			_platform->onDeviceUpdate();
 #endif
         }
     }

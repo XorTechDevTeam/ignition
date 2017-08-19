@@ -45,11 +45,6 @@ namespace xt {
             glfwPollEvents();
         }
 
-        bool XtDefaultDevice::isTerminate() const {
-            return static_cast<bool>(glfwWindowShouldClose(_window));
-        }
-
-
         void XtDefaultDevice::onResize(int width, int height) {
             LOGMSG("UI::Resize(%d;%d)", width, height);
             auto renderDevice = xt::XtEngine::getInstance()->getRenderDevice();
