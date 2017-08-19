@@ -4,3 +4,9 @@
 [submodule "src/3rd/glm"]
 	path = src/3rd/glm
 	url = https://github.com/g-truc/glm
+[submodule "src/3rd/AngelScriptJIT"]
+	path = src/3rd/AngelScriptJIT
+	url = https://github.com/XorTechDevTeam/AngelScript-JIT-Compiler
+[submodule "src/3rd/AngelScript"]
+	path = src/3rd/AngelScript
+	url = https://github.com/DronCode/angelscript

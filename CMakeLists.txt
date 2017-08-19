@@ -15,13 +15,19 @@ project(${PROJECT_NAME})
 
 message(">> Configure project ${PROJECT_NAME} for ${PLATFORM} platform")
 
+set(XT_DEPS
+        angelscript)
+
 set(XT_SOURCES
         src
         src/Core
         src/Core/Render
         src/Core/Input
         src/Core/Time
-        src/Core/Log)
+        src/Core/Event
+        src/Core/Logic
+        src/Core/Log
+        src/Modules)
 
 set(XT_INCLUDES src)
 #
@@ -32,6 +38,9 @@ add_definitions(-DXT_PROJECT_NAME="${PROJECT_NAME}")
 
 include_directories(src)
 include_directories(src/3rd/glm)
+include_directories(src/3rd/AngelScript/include)
+
+add_subdirectory(src/3rd/AngelScript/projects/cmake)
 
 if (${PLATFORM} STREQUAL "ANDROID")
     include(cmake/Android.cmake)

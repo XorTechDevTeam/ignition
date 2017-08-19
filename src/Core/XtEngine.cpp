@@ -3,9 +3,12 @@
  */
 #include "XtEngine.h"
 #include <Core/Time/XtSystemTime.h>
+#include <Core/Logic/XtLogic.h>
+#include <Modules/XtModuleManager.h>
 
 #if defined(XT_LINUX)
 #include <Core/Platform/Linux/XtDefaultDevice.h>
+
 #endif
 
 namespace xt {
@@ -35,6 +38,9 @@ namespace xt {
             delete _systemTime;
             _systemTime = nullptr;
         }
+
+        xt::logic::XtLogic::release();
+        xt::modules::XtModuleManager::release();
     }
 
     XtEngine* XtEngine::getInstance() {
@@ -79,6 +85,9 @@ namespace xt {
             return false;
         }
 
+        xt::logic::XtLogic::getInstance();
+        xt::modules::XtModuleManager::getInstance()->init();
+
         return true;
     }
 
@@ -92,6 +101,8 @@ namespace xt {
             if (_gameTime) {
                 _gameTime->update();
             }
+
+            xt::modules::XtModuleManager::getInstance()->resolveEvents();
 
             _platform->onDeviceUpdate();
             _renderDevice->drawFrame(delta);
