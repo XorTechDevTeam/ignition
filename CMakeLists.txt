@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(CMAKE_CXX_STANDARD 11)  #Android NDK supports only C++11 (maybe and 14)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(PLATFORM "NONE" CACHE STRING "Default platform")
@@ -33,9 +33,9 @@ include_directories(src/3rd/AngelScript/include)
 
 add_subdirectory(src/3rd/AngelScript/projects/cmake)
 
-if (${PLATFORM} STREQUAL "ANDROID")
+if (PLATFORM STREQUAL "ANDROID")
     include(cmake/Android.cmake)
-elseif(${PLATFORM} STREQUAL "LINUX")
+elseif(PLATFORM STREQUAL "LINUX")
     include(cmake/Linux.cmake)
 else()
     message(ERROR_FATAL "Unknown platform")
