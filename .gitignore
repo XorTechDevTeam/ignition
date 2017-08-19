@@ -1,9 +1,12 @@
 .idea/*
 build/*
+<<<<<<< HEAD
 andoird/.idea
 android/.*
 android/build
 android/app/.*
 android/app/build
+=======
+>>>>>>> origin/modules
 cmake-build-debug
 cmake-build-debug/*

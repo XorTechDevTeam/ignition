@@ -33,6 +33,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
 #include <string>
 #include <list>
+#include <forward_list>
 #include <vector>
 #include <map>
 #include <unordered_map>
@@ -74,9 +75,11 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 using String = std::string;
 using Guard = std::lock_guard<std::mutex>;
 template <typename T> using Vector = std::vector<T>;
+template <typename T> using List = std::forward_list<T>;
 template <typename T> using Queue = std::queue<T>;
 template <typename K, typename V> using Map = std::map<K, V>;
 template <typename K, typename V> using UnorderedMap = std::unordered_map<K, V>;
+template <typename K, typename V> using Pair = std::pair<K, V>;
 
 #include <glm/glm.hpp>
 using namespace glm;
