@@ -10,11 +10,23 @@
 #include <Core/Platform/Linux/XtLinuxLogService.h>
 #endif
 
+#ifdef XT_ANDROID
+#include <Core/Platform/Android/XtAndroidLogService.h>
+#endif
+
+#ifdef XT_WINDOWS
+#include <Core/Platform/Windows/XtWindowsLogService.h>
+#endif
+
 namespace xt {
 namespace log {
     XtLogManager::XtLogManager() : _service(nullptr) {
 #if defined(XT_LINUX)
         _service = static_cast<IXtLogService*>(new XtLinuxLogService());
+#elif defined(XT_ANDROID)
+        _service = static_cast<IXtLogService*>(new XtAndroidLogService());
+#elif defined(XT_WINDOWS)
+		_service = static_cast<IXtLogService*>(new XtWindowsLogService());
 #endif
     }
 

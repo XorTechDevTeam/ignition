@@ -3,7 +3,7 @@
 //
 #pragma once
 
-#include <XtCommon.h>
+#include <string>
 
 namespace xt {
 namespace log {
@@ -12,6 +12,7 @@ namespace log {
      */
     class IXtLogService {
     public:
+        virtual ~IXtLogService() = default;
         /**
          * @brief Метод для записи готового лога в журнал
          * @param message - сообщение в лог

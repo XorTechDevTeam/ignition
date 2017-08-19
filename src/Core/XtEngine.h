@@ -9,6 +9,7 @@
 #include <Core/IXtTime.h>
 #include <Core/XtDeviceParams.h>
 #include <XtCommon.h>
+#include "XtMetadata.h"
 
 namespace xt {
     using namespace input;
@@ -22,6 +23,8 @@ namespace xt {
         XtDeviceParams   _initParams;
         XtInputManager*  _inputManager;
         IXtRenderDevice* _renderDevice;
+
+        XtMetadata*     _metadata;
 
         IXtTime*        _systemTime;
         IXtTime*        _gameTime;
@@ -50,7 +53,7 @@ namespace xt {
         /**
          * @brief обновляет все подсистемы движка
          */
-        void update();
+		void update();
         /**
          * @brief Возвращает данные о работоспособности движка
          * @return
@@ -69,10 +72,15 @@ namespace xt {
          */
         void resume();
 
+		bool isActive() const { return _isActive; }
+
         IXtTime* getSystemTime() { return _systemTime; }
         IXtTime* getGameTime() { return _gameTime; }
         IXtPlatform* getCurrentPlatform() { return _platform; }
         XtInputManager* getInputManager() { return _inputManager; }
         IXtRenderDevice* getRenderDevice() { return _renderDevice; }
+		double getLastFrameTime() const { return _lastFrameTime; }
+
+		void setLastFrameTime(double time) { _lastFrameTime = time; }
     };
 }

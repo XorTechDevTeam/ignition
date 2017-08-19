@@ -15,7 +15,6 @@ namespace xt {
 
         virtual bool createDevice(int width, int height, bool fullscreen, bool reinit) = 0;
         virtual void onDeviceUpdate() = 0;
-        virtual bool isTerminate() const = 0;
         virtual void onResize(int width, int height) = 0;
     };
 }

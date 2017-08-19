@@ -17,6 +17,7 @@ namespace render {
 
     void XtOpenGL::drawFrame(float delta) {
         glClear(GL_COLOR_BUFFER_BIT);
+        glClearColor(0.f, 0.f, 1.f, 1.0f);
         //TODO: Draw frame
     }
 }

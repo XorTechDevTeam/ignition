@@ -2,11 +2,14 @@
  * XorTech Source Code
  */
 #include <XtCommon.h>
-#include <Core/Platform/Linux/XtDebugDevice.h>
 #include "XtEngine.h"
 
 XT_ENTRY
 {
+#if defined(XT_WINDOWS) && XT_WINDOWS == WIN32
+	xt::win32::g_win32AppInstance = hInstance;
+#endif
+
     LOGMSG("*** XT ENTRY ***");
 
     xt::XtDeviceParams deviceParams = xt::platform::g_xtDebugDevice;
@@ -18,7 +21,7 @@ XT_ENTRY
 
 #if !defined(XT_ANDROID) && !defined(XT_IOS)    //У Android & IOS свои циклы
     while (xt::XtEngine::getInstance()->isOnline()) {
-        xt::XtEngine::getInstance()->update();
+		xt::XtEngine::getInstance()->update();
     }
 
     xt::XtEngine::release();
