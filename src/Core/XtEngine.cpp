@@ -8,7 +8,6 @@
 
 #if defined(XT_LINUX)
 #include <Core/Platform/Linux/XtDefaultDevice.h>
-
 #endif
 
 namespace xt {
@@ -66,6 +65,10 @@ namespace xt {
         _gameTime = nullptr;
         _lastFrameTime = _systemTime->getTime();
 
+        _metadata = new xt::XtMetadata();
+        _gameTime = nullptr;    //TODO: Create class for game time
+        _lastFrameTime = _systemTime->getTime();
+        
         if (!_platform->createDevice(_initParams.width, _initParams.height, _initParams.fullscreen, false)) {
             LOGMSG("Unable to create platform device!");
             return false;

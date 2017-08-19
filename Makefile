@@ -5,8 +5,11 @@ all:
 	@echo "Usage:\n\tmake (LINUX|ANDROID|WINDOWS|OSX|IOS)"
 
 clean:
+	@echo "Clean common build"
 	rm -rf build
 	mkdir build
+	@echo "Clean android"
+	cd android && ./gradlew clean
 
 LINUX:
 	cmake . -B./build -DPLATFORM:STRING="LINUX" -DPROJECT_NAME:STRING=${XT_PROJECT}

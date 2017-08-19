@@ -3,6 +3,11 @@ cmake_minimum_required(VERSION 3.5)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(XT_VERSION_MAJOR 0)
+set(XT_VERSION_MINOR 1)
+add_definitions(-DXT_VERSION_MAJOR=${XT_VERSION_MAJOR})
+add_definitions(-DXT_VERSION_MINOR=${XT_VERSION_MINOR})
+
 set(PLATFORM "NONE" CACHE STRING "Default platform")
 set(PROJECT_NAME "XorTech" CACHE STRING "Project name")
 

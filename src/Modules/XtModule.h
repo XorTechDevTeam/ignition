@@ -27,6 +27,7 @@ namespace xt {
             XtDependencyUnit depUnit;
 		public:
             virtual int init() = 0;
+            virtual ~XtModule() = default;
 
 			void setId(unsigned int id);
 			XtModRC linkModule();
