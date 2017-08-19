@@ -14,26 +14,26 @@
 
 namespace xt {
  	namespace event {
+		const auto XtEvBroadcast = 0;
+
 	 	class XtEvent {
         private:
-            String sender;
-            String recipient;
+            unsigned int sender;
+            unsigned int recipient;
             String evName;
             String evContent;
         public:
-            XtEvent(String recipient, String evName, String evContent, String sender);
-            XtEvent(String recipient, String evName, String evContent);
+            XtEvent(unsigned int sender, unsigned int recipient, String evName, String evContent);
             ~XtEvent();
 
             void setEvName(String newEvName);
             void setEvContent(String newEvContent);
-            void setSender(String newSender);
-            void setRecipient(String newRecipient);
+			void setRecipient(unsigned int newRecp);
 
-            String getEvName();
-            String getEvContent();
-            String getSender();
-            String getRecipient();
+            String &getEvName();
+            String &getEvContent();
+            unsigned int getSender();
+            unsigned int getRecipient();
 	 	};
  	}
  }

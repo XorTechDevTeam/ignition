@@ -9,7 +9,7 @@ using namespace xt;
 using namespace modules;
 
 XtModuleManager::XtModuleManager() {
-
+    this->_evQueue = new event::XtEventQueue();
 }
 
 XtModuleManager::~XtModuleManager() {
@@ -35,6 +35,7 @@ void XtModuleManager::release() {
 int XtModuleManager::init() {
     LOGMSG("[XtModuleManager]: initializing...");
     XtNullModule::getInstance()->init();
+    //TODO: how to plug in any amount of modules with ease?
 
     LOGMSG("[XtModuleManager]: loaded %d modules.", this->modules.size());
 
@@ -43,6 +44,7 @@ int XtModuleManager::init() {
 
 XtModRC XtModuleManager::addModule(XtModule *module) {
     LOGMSG("[XtModuleManager]: linking module %s...", module->getName().c_str());
+    module->setId(this->modules.size());
     this->modules.push_back(module);
 
     XtDependencyUnit *deps = module->getDependencies();
@@ -66,6 +68,20 @@ XtModRC XtModuleManager::addModule(XtModule *module) {
     }
 
     return RC_OK;
+}
+
+void XtModuleManager::sendEvent(event::XtEvent *ev) {
+    this->_evQueue->pushEvent(ev);
+}
+
+void XtModuleManager::dispatchEvent(event::XtEvent *ev) {
+    //TODO: checks blah
+    this->modules.at(ev->getRecipient())->handleEvent(ev);
+}
+
+void XtModuleManager::resolveEvents() {
+    //TODO: ...
+    this->_evQueue->resolveEvents();
 }
 
 XtModuleManager *XtModuleManager::_instance = nullptr;

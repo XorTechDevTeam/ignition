@@ -8,12 +8,16 @@
 using namespace xt;
 using namespace modules;
 
+void XtModule::setId(unsigned int id) {
+    this->_id = id;
+}
+
 XtModRC XtModule::linkModule() {
     XtModRC rc = XtModuleManager::getInstance()->addModule(this);
 
     switch (rc) {
         case RC_OK:
-            LOGMSG("[%s]: linked successfully.", this->moduleName.c_str());
+            LOGMSG("[%s]: linked successfully, id: %d", this->moduleName.c_str(), this->_id);
             break;
         case RC_UNRSLV_DEP:
             LOGMSG("[%s]: this module has an unresolved dependency!", this->moduleName.c_str());
@@ -27,7 +31,7 @@ XtModRC XtModule::linkModule() {
 }
 
 void XtModule::sendEvent(event::XtEvent *ev) {
-    //TODO: send an event to module manager's event queue
+    XtModuleManager::getInstance()->sendEvent(ev);
 }
 
 XtDependencyUnit * XtModule::getDependencies() {

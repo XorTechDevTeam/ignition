@@ -97,6 +97,8 @@ namespace xt {
                 _gameTime->update();
             }
 
+            xt::modules::XtModuleManager::getInstance()->resolveEvents();
+
             _platform->onDeviceUpdate();
             _renderDevice->drawFrame(delta);
         }

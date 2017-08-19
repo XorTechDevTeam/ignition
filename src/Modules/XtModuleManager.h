@@ -10,6 +10,7 @@
 #pragma once
 
 #include <XtCommon.h>
+#include <Core/Event/XtEventQueue.h>
 #include <Modules/XtModuleCommon.h>
 #include <Modules/XtModule.h>
 
@@ -20,9 +21,12 @@ namespace xt {
             static XtModuleManager *_instance;
             Vector<XtModule*> modules;
 
+            event::XtEventQueue *_evQueue;
+
             XtModuleManager();
             ~XtModuleManager();
         public:
+
             static XtModuleManager *getInstance();
             static void release();
 
@@ -33,6 +37,10 @@ namespace xt {
 
             int init();
             XtModRC addModule(XtModule *module);
+
+            void sendEvent(event::XtEvent *ev);
+            void dispatchEvent(event::XtEvent *ev);
+            void resolveEvents();
         };
     }
 }

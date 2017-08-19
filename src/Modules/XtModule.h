@@ -22,18 +22,20 @@ namespace xt {
 	namespace modules {
 		class XtModule {
 		protected:
+			unsigned int _id;
 			String moduleName;
             XtDependencyUnit depUnit;
 		public:
-			//static XtModule *getInstance();
             virtual int init() = 0;
-            XtModRC linkModule();
-            XtDependencyUnit *getDependencies();
+
+			void setId(unsigned int id);
+			XtModRC linkModule();
 
 			void sendEvent(event::XtEvent *ev);
 			virtual void handleEvent(event::XtEvent *ev) = 0;
 
-            String getName();
+			String getName();
+			XtDependencyUnit *getDependencies();
 		};
 	}
 }

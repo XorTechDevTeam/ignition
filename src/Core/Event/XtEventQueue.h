@@ -21,9 +21,17 @@ namespace xt {
         class XtEventQueue {
         private:
             XtEvent *queue[MAX_EVENTS];
+            unsigned int _head; //for writing
+            unsigned int _tail; //for reading
 
+            UnorderedMap<String, List<unsigned int> > subscribers;
         public:
+            XtEventQueue();
 
+            void pushEvent(XtEvent *ev);
+            void resolveEvents();
+
+            void subscribe(String evName, unsigned int subscriber);
         };
     }
 }
