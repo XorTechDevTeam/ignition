@@ -1,6 +1,11 @@
-//
-// Created by rabbitlancer on 8/18/17.
-//
+/**
+ * @file XtCall.h
+ * @author Rabbitlancer
+ * @date 17 Aug 2017
+ *
+ * Defines function calling convention for AngelScript.
+ * If run on windows, XTCALL is __stdcall, otherwise - __cdecl (that is, default).
+ */
 
 #pragma once
 

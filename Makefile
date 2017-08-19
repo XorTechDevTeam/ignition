@@ -12,8 +12,8 @@ clean:
 	cd android && ./gradlew clean
 
 LINUX:
-	cmake . -B./build -DPLATFORM:STRING="LINUX" -DPROJECT_NAME:STRING=${XT_PROJECT}
-	cd build && make
+	cmake . -B./build/Linux -DPLATFORM:STRING="LINUX" -DPROJECT_NAME:STRING=${XT_PROJECT}
+	cd build/Linux && make
 
 ANDROID:
 	cd android && ./gradlew assembleDebug

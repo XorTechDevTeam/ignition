@@ -55,7 +55,7 @@ XtModRC XtModuleManager::addModule(XtModule *module) {
     while (cur != deps->end()) {
         dep = 0;
 
-        for (int i = 0; i < (int)this->modules.size(); ++i) {
+        for (int i = 0; i<this->modules.size(); ++i) {
             if (this->modules.at(i)->getName() == cur->first) {
                 *(cur->second) = dep = i;
             }
