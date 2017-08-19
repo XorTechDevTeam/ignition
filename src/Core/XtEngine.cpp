@@ -9,10 +9,23 @@
 #endif
 
 namespace xt {
+    XtEngine::XtEngine() : _platform(nullptr),
+                           _initParams(XtDeviceParams()),
+                           _inputManager(nullptr),
+                           _renderDevice(nullptr),
+                           _systemTime(nullptr),
+                           _gameTime(nullptr),
+                           _inLoop(true),
+                           _isActive(true) {}
+
     XtEngine::~XtEngine() {
         if (_platform != nullptr) {
             delete _platform;
             _platform = nullptr;
+        }
+        if (_renderDevice) {
+            delete _renderDevice;
+            _renderDevice = nullptr;
         }
         if (_inputManager != nullptr) {
             delete _inputManager;
@@ -24,40 +37,82 @@ namespace xt {
         }
     }
 
+    XtEngine* XtEngine::getInstance() {
+        if (!_instance) {
+            _instance = new XtEngine();
+        }
+        return _instance;
+    }
+
+    void XtEngine::release() {
+        if (_instance) {
+            delete _instance;
+            _instance = nullptr;
+        }
+    }
+
     bool XtEngine::init(const XtDeviceParams &deviceParams) {
         _initParams = deviceParams;
         _platform = new xt::platform::XtDefaultDevice();
         _inputManager = new xt::input::XtInputManager();
         _systemTime = new xt::time::XtSystemTime();
+<<<<<<< HEAD
         _metadata = new xt::XtMetadata();
         _gameTime = nullptr;    //TODO: Create class for game time
+=======
+        _gameTime = nullptr;
+        _lastFrameTime = _systemTime->getTime();
+>>>>>>> master
 
         if (!_platform->createDevice(_initParams.width, _initParams.height, _initParams.fullscreen, false)) {
-            //TODO: Log about it
+            LOGMSG("Unable to create platform device!");
             return false;
         }
 
-        _renderDevice = _platform->getRenderDevice();
+#if defined(XT_LINUX) || defined(XT_ANDROID) || defined(XT_IOS)
+        _renderDevice = new xt::render::XtOpenGL(_initParams.width, _initParams.height);
+#else
+#error "DirectX render not supported yet"
+#endif
+        if (!_renderDevice->init()) {
+            LOGMSG("Unable to init render device!");
+            return false;
+        }
 
         return true;
     }
 
-    int XtEngine::run() {
-        double time = _systemTime->getTime();
-
-        while (!_platform->isTerminate()) {
+    void XtEngine::update() {
+        if (_isActive) {
             const double newTime = _systemTime->getTime();
-            const float delta  = static_cast<float>(newTime - time);
+            const float delta = static_cast<float>(newTime - _lastFrameTime);
 
-            time = newTime;
+            _lastFrameTime = newTime;
 
-            if (_gameTime != nullptr) {
+            if (_gameTime) {
                 _gameTime->update();
             }
 
             _platform->onDeviceUpdate();
             _renderDevice->drawFrame(delta);
         }
-        return 0;
+    }
+
+    bool XtEngine::isOnline() const {
+        return _inLoop;
+    }
+
+    void XtEngine::offline() {
+        _inLoop = false;
+    }
+
+    void XtEngine::pause() {
+        _isActive = true;
+    }
+
+    void XtEngine::resume() {
+        _isActive = true;
     }
 }
+
+xt::XtEngine* xt::XtEngine::_instance = nullptr;
