@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>XorTech: Исходный файл src/Core/Logic/XtLogic.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">XorTech
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">A simple, efficient and convenient 2D cross-platform engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html">Core</a></li><li class="navelem"><a class="el" href="dir_19618bea0d0bdbc39285c9bf00461328.html">Logic</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">XtLogic.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by rabbitlancer on 8/17/17.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="XtLogic_8h.html">XtLogic.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="XtCall_8h.html">XtCall.h</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//TODO: stdstring addon</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacext.html">xt</a>;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span>logic;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classxt_1_1logic_1_1XtLogic.html#aa67e43efaa5f5a1cd4b9a3ed87485bcc">   12</a></span>&#160;<a class="code" href="classxt_1_1logic_1_1XtLogic.html#aa67e43efaa5f5a1cd4b9a3ed87485bcc">XtLogic::XtLogic</a>() {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    LOGMSG(<span class="stringliteral">&quot;*** Init XtLogic ***&quot;</span>);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    this-&gt;<a class="code" href="classxt_1_1logic_1_1XtLogic.html#addaeb5803b6f01e9f01fee4f98e855d0">asEngine</a> = asCreateScriptEngine();</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    this-&gt;<a class="code" href="classxt_1_1logic_1_1XtLogic.html#addaeb5803b6f01e9f01fee4f98e855d0">asEngine</a>-&gt;SetMessageCallback(asMETHOD(<a class="code" href="classxt_1_1logic_1_1XtLogic.html">XtLogic</a>,<a class="code" href="classxt_1_1logic_1_1XtLogic.html#adf8d8983dc0ab84bc6bf6035655a7532">messageCallback</a>), <span class="keyword">nullptr</span>, asCALL_THISCALL);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    LOGMSG(<span class="stringliteral">&quot;[XtLogic]: AngelScript environment set up.&quot;</span>);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classxt_1_1logic_1_1XtLogic.html#ac568e82fcfdf0ef66e52bf116d100624">   19</a></span>&#160;<a class="code" href="classxt_1_1logic_1_1XtLogic.html#ac568e82fcfdf0ef66e52bf116d100624">XtLogic::~XtLogic</a>() {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    this-&gt;<a class="code" href="classxt_1_1logic_1_1XtLogic.html#addaeb5803b6f01e9f01fee4f98e855d0">asEngine</a>-&gt;ShutDownAndRelease();</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classxt_1_1logic_1_1XtLogic.html#adf8d8983dc0ab84bc6bf6035655a7532">   23</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classxt_1_1logic_1_1XtLogic.html#adf8d8983dc0ab84bc6bf6035655a7532">XtLogic::messageCallback</a>(<span class="keyword">const</span> asSMessageInfo *msg, <span class="keywordtype">void</span> *param) {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    LOGMSG(<span class="stringliteral">&quot;[XtLogic]: received AngelScript callback&quot;</span>);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classxt_1_1logic_1_1XtLogic.html#a610b575bffac26ed1016c40f79c4127b">   27</a></span>&#160;<a class="code" href="classxt_1_1logic_1_1XtLogic.html">XtLogic</a> *<a class="code" href="classxt_1_1logic_1_1XtLogic.html#a610b575bffac26ed1016c40f79c4127b">XtLogic::getInstance</a>() {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classxt_1_1logic_1_1XtLogic.html#a45c39d742011980adc2136dea17e96a3">_instance</a>) {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classxt_1_1logic_1_1XtLogic.html#a45c39d742011980adc2136dea17e96a3">_instance</a> = <span class="keyword">new</span> <a class="code" href="classxt_1_1logic_1_1XtLogic.html#aa67e43efaa5f5a1cd4b9a3ed87485bcc">XtLogic</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classxt_1_1logic_1_1XtLogic.html#a45c39d742011980adc2136dea17e96a3">_instance</a>;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classxt_1_1logic_1_1XtLogic.html#a8d2dd7f4251d6b69267ad948bbbe1850">   34</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classxt_1_1logic_1_1XtLogic.html#a8d2dd7f4251d6b69267ad948bbbe1850">XtLogic::release</a>() {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classxt_1_1logic_1_1XtLogic.html#a45c39d742011980adc2136dea17e96a3">_instance</a>) {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">delete</span> <a class="code" href="classxt_1_1logic_1_1XtLogic.html#a45c39d742011980adc2136dea17e96a3">_instance</a>;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classxt_1_1logic_1_1XtLogic.html#a45c39d742011980adc2136dea17e96a3">_instance</a> = <span class="keyword">nullptr</span>;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classxt_1_1logic_1_1XtLogic.html#aae20b56ad6619ed2cff37ed32e32a23e">   41</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classxt_1_1logic_1_1XtLogic.html#aae20b56ad6619ed2cff37ed32e32a23e">XtLogic::registerFunction</a>(String name, asSFuncPtr m) {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    LOGMSG(<span class="stringliteral">&quot;[XtLogic]: registering function %s...&quot;</span>, name.c_str());</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">//TODO: checks and whistles</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    this-&gt;<a class="code" href="classxt_1_1logic_1_1XtLogic.html#addaeb5803b6f01e9f01fee4f98e855d0">asEngine</a>-&gt;RegisterGlobalFunction(name.c_str(), m, asXTCALL);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    LOGMSG(<span class="stringliteral">&quot;[XtLogic]: registered successfully.&quot;</span>);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classxt_1_1logic_1_1XtLogic.html#a57ae8bb4abc8f0c87c0634362f1bbfd9">   51</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classxt_1_1logic_1_1XtLogic.html#a57ae8bb4abc8f0c87c0634362f1bbfd9">XtLogic::registerMethod</a>(String name, String <span class="keywordtype">object</span>, asSFuncPtr m) {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    LOGMSG(<span class="stringliteral">&quot;[XtLogic]: registering method %s in class %s...&quot;</span>, name.c_str(), <span class="keywordtype">object</span>.c_str());</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//TODO: ...well, y&#39;know</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    this-&gt;<a class="code" href="classxt_1_1logic_1_1XtLogic.html#addaeb5803b6f01e9f01fee4f98e855d0">asEngine</a>-&gt;RegisterObjectMethod(<span class="keywordtype">object</span>.c_str(), name.c_str(), m, asCALL_THISCALL);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<a class="code" href="classxt_1_1logic_1_1XtLogic.html">XtLogic</a> *<a class="code" href="classxt_1_1logic_1_1XtLogic.html#a45c39d742011980adc2136dea17e96a3">XtLogic::_instance</a> = <span class="keyword">nullptr</span>;</div><div class="ttc" id="classxt_1_1logic_1_1XtLogic_html_addaeb5803b6f01e9f01fee4f98e855d0"><div class="ttname"><a href="classxt_1_1logic_1_1XtLogic.html#addaeb5803b6f01e9f01fee4f98e855d0">xt::logic::XtLogic::asEngine</a></div><div class="ttdeci">asIScriptEngine * asEngine</div><div class="ttdoc">Указатель на виртуальную машину AngelScript. </div><div class="ttdef"><b>Definition:</b> <a href="XtLogic_8h_source.html#l00027">XtLogic.h:27</a></div></div>
+<div class="ttc" id="classxt_1_1logic_1_1XtLogic_html_aae20b56ad6619ed2cff37ed32e32a23e"><div class="ttname"><a href="classxt_1_1logic_1_1XtLogic.html#aae20b56ad6619ed2cff37ed32e32a23e">xt::logic::XtLogic::registerFunction</a></div><div class="ttdeci">int registerFunction(String name, asSFuncPtr m)</div><div class="ttdoc">Регистрирует глобальную функцию в скриптовом окружении. </div><div class="ttdef"><b>Definition:</b> <a href="XtLogic_8cpp_source.html#l00041">XtLogic.cpp:41</a></div></div>
+<div class="ttc" id="classxt_1_1logic_1_1XtLogic_html_a57ae8bb4abc8f0c87c0634362f1bbfd9"><div class="ttname"><a href="classxt_1_1logic_1_1XtLogic.html#a57ae8bb4abc8f0c87c0634362f1bbfd9">xt::logic::XtLogic::registerMethod</a></div><div class="ttdeci">int registerMethod(String name, String object, asSFuncPtr m)</div><div class="ttdoc">Регистрирует метод name объекта object в скриптовом окружении. </div><div class="ttdef"><b>Definition:</b> <a href="XtLogic_8cpp_source.html#l00051">XtLogic.cpp:51</a></div></div>
+<div class="ttc" id="namespacext_html"><div class="ttname"><a href="namespacext.html">xt</a></div><div class="ttdoc">XorTech Source Code. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8h_source.html#l00016">XtEvent.h:16</a></div></div>
+<div class="ttc" id="classxt_1_1logic_1_1XtLogic_html_ac568e82fcfdf0ef66e52bf116d100624"><div class="ttname"><a href="classxt_1_1logic_1_1XtLogic.html#ac568e82fcfdf0ef66e52bf116d100624">xt::logic::XtLogic::~XtLogic</a></div><div class="ttdeci">~XtLogic()</div><div class="ttdoc">Приватный деструктор, завершающий работу с AngelScript. </div><div class="ttdef"><b>Definition:</b> <a href="XtLogic_8cpp_source.html#l00019">XtLogic.cpp:19</a></div></div>
+<div class="ttc" id="classxt_1_1logic_1_1XtLogic_html_a610b575bffac26ed1016c40f79c4127b"><div class="ttname"><a href="classxt_1_1logic_1_1XtLogic.html#a610b575bffac26ed1016c40f79c4127b">xt::logic::XtLogic::getInstance</a></div><div class="ttdeci">static XtLogic * getInstance()</div><div class="ttdoc">Фабрика для одиночки. </div><div class="ttdef"><b>Definition:</b> <a href="XtLogic_8cpp_source.html#l00027">XtLogic.cpp:27</a></div></div>
+<div class="ttc" id="classxt_1_1logic_1_1XtLogic_html_a45c39d742011980adc2136dea17e96a3"><div class="ttname"><a href="classxt_1_1logic_1_1XtLogic.html#a45c39d742011980adc2136dea17e96a3">xt::logic::XtLogic::_instance</a></div><div class="ttdeci">static XtLogic * _instance</div><div class="ttdoc">Указатель на объект класса. </div><div class="ttdef"><b>Definition:</b> <a href="XtLogic_8h_source.html#l00025">XtLogic.h:25</a></div></div>
+<div class="ttc" id="classxt_1_1logic_1_1XtLogic_html_a8d2dd7f4251d6b69267ad948bbbe1850"><div class="ttname"><a href="classxt_1_1logic_1_1XtLogic.html#a8d2dd7f4251d6b69267ad948bbbe1850">xt::logic::XtLogic::release</a></div><div class="ttdeci">static void release()</div><div class="ttdoc">Освобождает объект. </div><div class="ttdef"><b>Definition:</b> <a href="XtLogic_8cpp_source.html#l00034">XtLogic.cpp:34</a></div></div>
+<div class="ttc" id="classxt_1_1logic_1_1XtLogic_html_adf8d8983dc0ab84bc6bf6035655a7532"><div class="ttname"><a href="classxt_1_1logic_1_1XtLogic.html#adf8d8983dc0ab84bc6bf6035655a7532">xt::logic::XtLogic::messageCallback</a></div><div class="ttdeci">void messageCallback(const asSMessageInfo *msg, void *param)</div><div class="ttdoc">MessageCallback для AngelScript. </div><div class="ttdef"><b>Definition:</b> <a href="XtLogic_8cpp_source.html#l00023">XtLogic.cpp:23</a></div></div>
+<div class="ttc" id="XtCall_8h_html"><div class="ttname"><a href="XtCall_8h.html">XtCall.h</a></div></div>
+<div class="ttc" id="XtLogic_8h_html"><div class="ttname"><a href="XtLogic_8h.html">XtLogic.h</a></div></div>
+<div class="ttc" id="classxt_1_1logic_1_1XtLogic_html"><div class="ttname"><a href="classxt_1_1logic_1_1XtLogic.html">xt::logic::XtLogic</a></div><div class="ttdoc">Основной класс игровой логики. </div><div class="ttdef"><b>Definition:</b> <a href="XtLogic_8h_source.html#l00023">XtLogic.h:23</a></div></div>
+<div class="ttc" id="classxt_1_1logic_1_1XtLogic_html_aa67e43efaa5f5a1cd4b9a3ed87485bcc"><div class="ttname"><a href="classxt_1_1logic_1_1XtLogic.html#aa67e43efaa5f5a1cd4b9a3ed87485bcc">xt::logic::XtLogic::XtLogic</a></div><div class="ttdeci">XtLogic()</div><div class="ttdoc">Приватный конструктор, инициализирующий окружение. </div><div class="ttdef"><b>Definition:</b> <a href="XtLogic_8cpp_source.html#l00012">XtLogic.cpp:12</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по XorTech. Последние изменения: Вс 20 Авг 2017 00:57:49. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

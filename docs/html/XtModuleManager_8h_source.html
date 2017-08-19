@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>XorTech: Исходный файл src/Modules/XtModuleManager.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">XorTech
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">A simple, efficient and convenient 2D cross-platform engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_eeb7fcc90d516a232deaaf4de23f9c95.html">Modules</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">XtModuleManager.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="XtModuleManager_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;XtCommon.h&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="XtEventQueue_8h.html">Core/Event/XtEventQueue.h</a>&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="XtModuleCommon_8h.html">Modules/XtModuleCommon.h</a>&gt;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="XtModule_8h.html">Modules/XtModule.h</a>&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacext.html">xt</a> {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">namespace </span>modules {</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classxt_1_1modules_1_1XtModuleManager.html">   25</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a>  {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">private</span>:</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classxt_1_1modules_1_1XtModuleManager.html#aa1ad9bc2331a1f83446a2aa94b27d352">   27</a></span>&#160;            <span class="keyword">static</span> <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a> *<a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#aa1ad9bc2331a1f83446a2aa94b27d352">_instance</a>;  </div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classxt_1_1modules_1_1XtModuleManager.html#a352ba6472da017c462fa2b8d8a09eeac">   28</a></span>&#160;            Vector&lt;XtModule*&gt; <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#a352ba6472da017c462fa2b8d8a09eeac">modules</a>;          </div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classxt_1_1modules_1_1XtModuleManager.html#a0128e1e9e803acab50c66c08fbb6e103">   30</a></span>&#160;            <a class="code" href="classxt_1_1event_1_1XtEventQueue.html">event::XtEventQueue</a> *<a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#a0128e1e9e803acab50c66c08fbb6e103">_evQueue</a>;      </div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#a1052016157e7cb33027d8b0c55d6973e">XtModuleManager</a>();  </div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#a80cafe48f68c442308408c8e7691f11c">~XtModuleManager</a>(); </div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">public</span>:</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">static</span> <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a> *<a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#a7ef61f91f7bf99ff8a3f9677db2e7f86">getInstance</a>();</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#a2ab5ae4d72401fe1b7f6ef7547d277e0">release</a>();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#a1052016157e7cb33027d8b0c55d6973e">XtModuleManager</a>(<span class="keyword">const</span> <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a>&amp; copy)            = <span class="keyword">delete</span>;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#a1052016157e7cb33027d8b0c55d6973e">XtModuleManager</a>(<span class="keyword">const</span> <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a>&amp;&amp; move)           = <span class="keyword">delete</span>;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a>&amp; copy) = <span class="keyword">delete</span>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a>&amp; operator=(<a class="code" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a>&amp;&amp; move)      = <span class="keyword">delete</span>;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#a0a1b31a70bdf5afdd276202c99a7e057">init</a>();</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="XtModuleCommon_8h.html#a15c4a434432dc8d4b05b88356a5bbfa9">XtModRC</a> <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#aa2d88370d20636845ddafae92b9ff06f">addModule</a>(<a class="code" href="classxt_1_1modules_1_1XtModule.html">XtModule</a> *module);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#a0a24077571049404d64c1b3b8740f00f">sendEvent</a>(<a class="code" href="classxt_1_1event_1_1XtEvent.html">event::XtEvent</a> *ev);</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#a1628b98f36df82d22b1c06457d2933c5">dispatchEvent</a>(<a class="code" href="classxt_1_1event_1_1XtEvent.html">event::XtEvent</a> *ev);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classxt_1_1modules_1_1XtModuleManager.html#a92923a70e1ba3d040eeb75ad76015e18">resolveEvents</a>();</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        };</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div><div class="ttc" id="classxt_1_1modules_1_1XtModuleManager_html_a0128e1e9e803acab50c66c08fbb6e103"><div class="ttname"><a href="classxt_1_1modules_1_1XtModuleManager.html#a0128e1e9e803acab50c66c08fbb6e103">xt::modules::XtModuleManager::_evQueue</a></div><div class="ttdeci">event::XtEventQueue * _evQueue</div><div class="ttdoc">Очередь событий. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleManager_8h_source.html#l00030">XtModuleManager.h:30</a></div></div>
+<div class="ttc" id="classxt_1_1modules_1_1XtModuleManager_html"><div class="ttname"><a href="classxt_1_1modules_1_1XtModuleManager.html">xt::modules::XtModuleManager</a></div><div class="ttdoc">Менеджер модулей. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleManager_8h_source.html#l00025">XtModuleManager.h:25</a></div></div>
+<div class="ttc" id="classxt_1_1modules_1_1XtModuleManager_html_aa2d88370d20636845ddafae92b9ff06f"><div class="ttname"><a href="classxt_1_1modules_1_1XtModuleManager.html#aa2d88370d20636845ddafae92b9ff06f">xt::modules::XtModuleManager::addModule</a></div><div class="ttdeci">XtModRC addModule(XtModule *module)</div><div class="ttdoc">Регистрирует модуль module в менеджере. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleManager_8cpp_source.html#l00045">XtModuleManager.cpp:45</a></div></div>
+<div class="ttc" id="classxt_1_1modules_1_1XtModuleManager_html_a0a24077571049404d64c1b3b8740f00f"><div class="ttname"><a href="classxt_1_1modules_1_1XtModuleManager.html#a0a24077571049404d64c1b3b8740f00f">xt::modules::XtModuleManager::sendEvent</a></div><div class="ttdeci">void sendEvent(event::XtEvent *ev)</div><div class="ttdoc">Отправляет сообщение ev в очередь событий. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleManager_8cpp_source.html#l00073">XtModuleManager.cpp:73</a></div></div>
+<div class="ttc" id="classxt_1_1modules_1_1XtModuleManager_html_a352ba6472da017c462fa2b8d8a09eeac"><div class="ttname"><a href="classxt_1_1modules_1_1XtModuleManager.html#a352ba6472da017c462fa2b8d8a09eeac">xt::modules::XtModuleManager::modules</a></div><div class="ttdeci">Vector&lt; XtModule * &gt; modules</div><div class="ttdoc">Контейнер зарегистрированных модулей. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleManager_8h_source.html#l00028">XtModuleManager.h:28</a></div></div>
+<div class="ttc" id="classxt_1_1modules_1_1XtModuleManager_html_aa1ad9bc2331a1f83446a2aa94b27d352"><div class="ttname"><a href="classxt_1_1modules_1_1XtModuleManager.html#aa1ad9bc2331a1f83446a2aa94b27d352">xt::modules::XtModuleManager::_instance</a></div><div class="ttdeci">static XtModuleManager * _instance</div><div class="ttdoc">Указатель на экземпляр менеджера модулей. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleManager_8h_source.html#l00027">XtModuleManager.h:27</a></div></div>
+<div class="ttc" id="namespacext_html"><div class="ttname"><a href="namespacext.html">xt</a></div><div class="ttdoc">XorTech Source Code. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8h_source.html#l00016">XtEvent.h:16</a></div></div>
+<div class="ttc" id="XtModule_8h_html"><div class="ttname"><a href="XtModule_8h.html">XtModule.h</a></div></div>
+<div class="ttc" id="classxt_1_1modules_1_1XtModuleManager_html_a92923a70e1ba3d040eeb75ad76015e18"><div class="ttname"><a href="classxt_1_1modules_1_1XtModuleManager.html#a92923a70e1ba3d040eeb75ad76015e18">xt::modules::XtModuleManager::resolveEvents</a></div><div class="ttdeci">void resolveEvents()</div><div class="ttdoc">Разрешает очередь событий. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleManager_8cpp_source.html#l00082">XtModuleManager.cpp:82</a></div></div>
+<div class="ttc" id="classxt_1_1modules_1_1XtModuleManager_html_a0a1b31a70bdf5afdd276202c99a7e057"><div class="ttname"><a href="classxt_1_1modules_1_1XtModuleManager.html#a0a1b31a70bdf5afdd276202c99a7e057">xt::modules::XtModuleManager::init</a></div><div class="ttdeci">int init()</div><div class="ttdoc">Инициализирует менеджер модулей. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleManager_8cpp_source.html#l00035">XtModuleManager.cpp:35</a></div></div>
+<div class="ttc" id="classxt_1_1modules_1_1XtModuleManager_html_a1052016157e7cb33027d8b0c55d6973e"><div class="ttname"><a href="classxt_1_1modules_1_1XtModuleManager.html#a1052016157e7cb33027d8b0c55d6973e">xt::modules::XtModuleManager::XtModuleManager</a></div><div class="ttdeci">XtModuleManager()</div><div class="ttdoc">Приватный конструктор. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleManager_8cpp_source.html#l00011">XtModuleManager.cpp:11</a></div></div>
+<div class="ttc" id="XtEventQueue_8h_html"><div class="ttname"><a href="XtEventQueue_8h.html">XtEventQueue.h</a></div></div>
+<div class="ttc" id="XtModuleCommon_8h_html"><div class="ttname"><a href="XtModuleCommon_8h.html">XtModuleCommon.h</a></div></div>
+<div class="ttc" id="classxt_1_1modules_1_1XtModuleManager_html_a2ab5ae4d72401fe1b7f6ef7547d277e0"><div class="ttname"><a href="classxt_1_1modules_1_1XtModuleManager.html#a2ab5ae4d72401fe1b7f6ef7547d277e0">xt::modules::XtModuleManager::release</a></div><div class="ttdeci">static void release()</div><div class="ttdoc">Освобождает память, занятую одиночкой. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleManager_8cpp_source.html#l00028">XtModuleManager.cpp:28</a></div></div>
+<div class="ttc" id="classxt_1_1modules_1_1XtModule_html"><div class="ttname"><a href="classxt_1_1modules_1_1XtModule.html">xt::modules::XtModule</a></div><div class="ttdoc">Абстрактный класс модуля. </div><div class="ttdef"><b>Definition:</b> <a href="XtModule_8h_source.html#l00028">XtModule.h:28</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html">xt::event::XtEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8h_source.html#l00020">XtEvent.h:20</a></div></div>
+<div class="ttc" id="classxt_1_1modules_1_1XtModuleManager_html_a1628b98f36df82d22b1c06457d2933c5"><div class="ttname"><a href="classxt_1_1modules_1_1XtModuleManager.html#a1628b98f36df82d22b1c06457d2933c5">xt::modules::XtModuleManager::dispatchEvent</a></div><div class="ttdeci">void dispatchEvent(event::XtEvent *ev)</div><div class="ttdoc">Отправляет событие ev требуемому модулю на обработку. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleManager_8cpp_source.html#l00077">XtModuleManager.cpp:77</a></div></div>
+<div class="ttc" id="classxt_1_1modules_1_1XtModuleManager_html_a80cafe48f68c442308408c8e7691f11c"><div class="ttname"><a href="classxt_1_1modules_1_1XtModuleManager.html#a80cafe48f68c442308408c8e7691f11c">xt::modules::XtModuleManager::~XtModuleManager</a></div><div class="ttdeci">~XtModuleManager()</div><div class="ttdoc">Приватный деструктор. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleManager_8cpp_source.html#l00015">XtModuleManager.cpp:15</a></div></div>
+<div class="ttc" id="XtModuleCommon_8h_html_a15c4a434432dc8d4b05b88356a5bbfa9"><div class="ttname"><a href="XtModuleCommon_8h.html#a15c4a434432dc8d4b05b88356a5bbfa9">xt::modules::XtModRC</a></div><div class="ttdeci">XtModRC</div><div class="ttdoc">Return code for module linking. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleCommon_8h_source.html#l00022">XtModuleCommon.h:22</a></div></div>
+<div class="ttc" id="classxt_1_1modules_1_1XtModuleManager_html_a7ef61f91f7bf99ff8a3f9677db2e7f86"><div class="ttname"><a href="classxt_1_1modules_1_1XtModuleManager.html#a7ef61f91f7bf99ff8a3f9677db2e7f86">xt::modules::XtModuleManager::getInstance</a></div><div class="ttdeci">static XtModuleManager * getInstance()</div><div class="ttdoc">Фабрика менеджера модулей. </div><div class="ttdef"><b>Definition:</b> <a href="XtModuleManager_8cpp_source.html#l00021">XtModuleManager.cpp:21</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEventQueue_html"><div class="ttname"><a href="classxt_1_1event_1_1XtEventQueue.html">xt::event::XtEventQueue</a></div><div class="ttdoc">Event queue class. </div><div class="ttdef"><b>Definition:</b> <a href="XtEventQueue_8h_source.html#l00033">XtEventQueue.h:33</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по XorTech. Последние изменения: Вс 20 Авг 2017 00:57:49. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

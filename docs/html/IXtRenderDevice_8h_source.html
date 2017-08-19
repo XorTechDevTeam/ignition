@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>XorTech: Исходный файл src/Core/Render/IXtRenderDevice.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">XorTech
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">A simple, efficient and convenient 2D cross-platform engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html">Core</a></li><li class="navelem"><a class="el" href="dir_75f490722eea13cd3d9c9084901469a5.html">Render</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">IXtRenderDevice.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by droncode on 8/9/17.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacext.html">xt</a> {</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">namespace </span>render {</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classxt_1_1render_1_1IXtRenderDevice.html">   12</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classxt_1_1render_1_1IXtRenderDevice.html">IXtRenderDevice</a> {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">protected</span>:</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keywordtype">bool</span> _fullscreen;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="keywordtype">int</span> _width;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordtype">int</span> _height;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">public</span>:</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classxt_1_1render_1_1IXtRenderDevice.html#ac79961020d56e5360014d3311255840e">   24</a></span>&#160;            <a class="code" href="classxt_1_1render_1_1IXtRenderDevice.html#ac79961020d56e5360014d3311255840e">IXtRenderDevice</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">bool</span> fullscreen = <span class="keyword">false</span>) : _width(width),</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                                                              _height(height),</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                                                              _fullscreen(fullscreen) {}</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keyword">virtual</span> ~<a class="code" href="classxt_1_1render_1_1IXtRenderDevice.html">IXtRenderDevice</a>() = <span class="keywordflow">default</span>;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classxt_1_1render_1_1IXtRenderDevice.html#a2534ba327274b93e2b1e14e886d5c08c">init</a>() = 0;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classxt_1_1render_1_1IXtRenderDevice.html#a6d2c501c300d7623b0b3ca2eeb130fc7">changeViewport</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height) = 0;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classxt_1_1render_1_1IXtRenderDevice.html#a522ad45145969dc5ed3df197f3e18060">drawFrame</a>(<span class="keywordtype">float</span> delta) = 0;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        };</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div><div class="ttc" id="classxt_1_1render_1_1IXtRenderDevice_html_a522ad45145969dc5ed3df197f3e18060"><div class="ttname"><a href="classxt_1_1render_1_1IXtRenderDevice.html#a522ad45145969dc5ed3df197f3e18060">xt::render::IXtRenderDevice::drawFrame</a></div><div class="ttdeci">virtual void drawFrame(float delta)=0</div><div class="ttdoc">Отрисовка одного кадра </div></div>
+<div class="ttc" id="namespacext_html"><div class="ttname"><a href="namespacext.html">xt</a></div><div class="ttdoc">XorTech Source Code. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8h_source.html#l00016">XtEvent.h:16</a></div></div>
+<div class="ttc" id="classxt_1_1render_1_1IXtRenderDevice_html_a2534ba327274b93e2b1e14e886d5c08c"><div class="ttname"><a href="classxt_1_1render_1_1IXtRenderDevice.html#a2534ba327274b93e2b1e14e886d5c08c">xt::render::IXtRenderDevice::init</a></div><div class="ttdeci">virtual bool init()=0</div><div class="ttdoc">Основная инициализация рендера </div></div>
+<div class="ttc" id="classxt_1_1render_1_1IXtRenderDevice_html_ac79961020d56e5360014d3311255840e"><div class="ttname"><a href="classxt_1_1render_1_1IXtRenderDevice.html#ac79961020d56e5360014d3311255840e">xt::render::IXtRenderDevice::IXtRenderDevice</a></div><div class="ttdeci">IXtRenderDevice(int width, int height, bool fullscreen=false)</div><div class="ttdoc">Конструктор рендера. </div><div class="ttdef"><b>Definition:</b> <a href="IXtRenderDevice_8h_source.html#l00024">IXtRenderDevice.h:24</a></div></div>
+<div class="ttc" id="classxt_1_1render_1_1IXtRenderDevice_html"><div class="ttname"><a href="classxt_1_1render_1_1IXtRenderDevice.html">xt::render::IXtRenderDevice</a></div><div class="ttdoc">Базовый класс для любого рендера. </div><div class="ttdef"><b>Definition:</b> <a href="IXtRenderDevice_8h_source.html#l00012">IXtRenderDevice.h:12</a></div></div>
+<div class="ttc" id="classxt_1_1render_1_1IXtRenderDevice_html_a6d2c501c300d7623b0b3ca2eeb130fc7"><div class="ttname"><a href="classxt_1_1render_1_1IXtRenderDevice.html#a6d2c501c300d7623b0b3ca2eeb130fc7">xt::render::IXtRenderDevice::changeViewport</a></div><div class="ttdeci">virtual void changeViewport(int width, int height)=0</div><div class="ttdoc">Изменение размеров области видимости </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по XorTech. Последние изменения: Вс 20 Авг 2017 00:57:49. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

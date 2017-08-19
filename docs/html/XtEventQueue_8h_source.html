@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>XorTech: Исходный файл src/Core/Event/XtEventQueue.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">XorTech
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">A simple, efficient and convenient 2D cross-platform engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html">Core</a></li><li class="navelem"><a class="el" href="dir_dfcbce1c3be733c48796a99504df6c02.html">Event</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">XtEventQueue.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="XtEventQueue_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="XtEvent_8h.html">XtEvent.h</a>&quot;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;XtCommon.h&gt;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacext.html">xt</a> {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">namespace </span>event {</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="XtEventQueue_8h.html#ac0a086d0b35b87c29d88220cdc763bc5">   23</a></span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="XtEventQueue_8h.html#ac0a086d0b35b87c29d88220cdc763bc5">MAX_EVENTS</a> = 1024;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEventQueue.html">   33</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classxt_1_1event_1_1XtEventQueue.html">XtEventQueue</a> {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">private</span>:</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEventQueue.html#ae2a09cfbbbeab5385a9ef5c449d3efb1">   35</a></span>&#160;            <a class="code" href="classxt_1_1event_1_1XtEvent.html">XtEvent</a> *<a class="code" href="classxt_1_1event_1_1XtEventQueue.html#ae2a09cfbbbeab5385a9ef5c449d3efb1">queue</a>[<a class="code" href="XtEventQueue_8h.html#ac0a086d0b35b87c29d88220cdc763bc5">MAX_EVENTS</a>];         </div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEventQueue.html#a38ec17e2608afb0cc8b8621e85f4d6e2">   40</a></span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classxt_1_1event_1_1XtEventQueue.html#a38ec17e2608afb0cc8b8621e85f4d6e2">_head</a>;                                     </div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEventQueue.html#a08de7d4c0c4f6ab674f9b109c5d85aa2">   41</a></span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classxt_1_1event_1_1XtEventQueue.html#a08de7d4c0c4f6ab674f9b109c5d85aa2">_tail</a>;                                     </div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEventQueue.html#ac53eab76c1b6681ec7e12c77d3f90b9e">   43</a></span>&#160;            UnorderedMap&lt;String, List&lt;unsigned int&gt; &gt; <a class="code" href="classxt_1_1event_1_1XtEventQueue.html#ac53eab76c1b6681ec7e12c77d3f90b9e">subscribers</a>;  </div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">public</span>:</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="classxt_1_1event_1_1XtEventQueue.html#a796787b983fe1d359a6721bf144f57be">XtEventQueue</a>();</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classxt_1_1event_1_1XtEventQueue.html#aeb84737aa4703373d495f8510e76cf70">pushEvent</a>(<a class="code" href="classxt_1_1event_1_1XtEvent.html">XtEvent</a> *ev);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classxt_1_1event_1_1XtEventQueue.html#a931c3368d233f3c64c3caaebe916e20c">resolveEvents</a>();</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classxt_1_1event_1_1XtEventQueue.html#ac89043afcaaf88ebc3de2794b10e8820">subscribe</a>(String evName, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> subscriber);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        };</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div><div class="ttc" id="classxt_1_1event_1_1XtEventQueue_html_ac89043afcaaf88ebc3de2794b10e8820"><div class="ttname"><a href="classxt_1_1event_1_1XtEventQueue.html#ac89043afcaaf88ebc3de2794b10e8820">xt::event::XtEventQueue::subscribe</a></div><div class="ttdeci">void subscribe(String evName, unsigned int subscriber)</div><div class="ttdoc">Subscribes a module to an event with name evName. </div><div class="ttdef"><b>Definition:</b> <a href="XtEventQueue_8cpp_source.html#l00056">XtEventQueue.cpp:56</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEventQueue_html_aeb84737aa4703373d495f8510e76cf70"><div class="ttname"><a href="classxt_1_1event_1_1XtEventQueue.html#aeb84737aa4703373d495f8510e76cf70">xt::event::XtEventQueue::pushEvent</a></div><div class="ttdeci">void pushEvent(XtEvent *ev)</div><div class="ttdoc">Pushes event to the queue. </div><div class="ttdef"><b>Definition:</b> <a href="XtEventQueue_8cpp_source.html#l00016">XtEventQueue.cpp:16</a></div></div>
+<div class="ttc" id="XtEvent_8h_html"><div class="ttname"><a href="XtEvent_8h.html">XtEvent.h</a></div></div>
+<div class="ttc" id="namespacext_html"><div class="ttname"><a href="namespacext.html">xt</a></div><div class="ttdoc">XorTech Source Code. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8h_source.html#l00016">XtEvent.h:16</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEventQueue_html_ac53eab76c1b6681ec7e12c77d3f90b9e"><div class="ttname"><a href="classxt_1_1event_1_1XtEventQueue.html#ac53eab76c1b6681ec7e12c77d3f90b9e">xt::event::XtEventQueue::subscribers</a></div><div class="ttdeci">UnorderedMap&lt; String, List&lt; unsigned int &gt; &gt; subscribers</div><div class="ttdoc">Map that associates event names with modules that are subscribed to those events. ...</div><div class="ttdef"><b>Definition:</b> <a href="XtEventQueue_8h_source.html#l00043">XtEventQueue.h:43</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEventQueue_html_ae2a09cfbbbeab5385a9ef5c449d3efb1"><div class="ttname"><a href="classxt_1_1event_1_1XtEventQueue.html#ae2a09cfbbbeab5385a9ef5c449d3efb1">xt::event::XtEventQueue::queue</a></div><div class="ttdeci">XtEvent * queue[MAX_EVENTS]</div><div class="ttdoc">Actual event queue container. </div><div class="ttdef"><b>Definition:</b> <a href="XtEventQueue_8h_source.html#l00035">XtEventQueue.h:35</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEventQueue_html_a38ec17e2608afb0cc8b8621e85f4d6e2"><div class="ttname"><a href="classxt_1_1event_1_1XtEventQueue.html#a38ec17e2608afb0cc8b8621e85f4d6e2">xt::event::XtEventQueue::_head</a></div><div class="ttdeci">unsigned int _head</div><div class="ttdoc">Writing end of the deque. </div><div class="ttdef"><b>Definition:</b> <a href="XtEventQueue_8h_source.html#l00040">XtEventQueue.h:40</a></div></div>
+<div class="ttc" id="XtEventQueue_8h_html_ac0a086d0b35b87c29d88220cdc763bc5"><div class="ttname"><a href="XtEventQueue_8h.html#ac0a086d0b35b87c29d88220cdc763bc5">xt::event::MAX_EVENTS</a></div><div class="ttdeci">const auto MAX_EVENTS</div><div class="ttdoc">Defines the size of event queue. </div><div class="ttdef"><b>Definition:</b> <a href="XtEventQueue_8h_source.html#l00023">XtEventQueue.h:23</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEventQueue_html_a796787b983fe1d359a6721bf144f57be"><div class="ttname"><a href="classxt_1_1event_1_1XtEventQueue.html#a796787b983fe1d359a6721bf144f57be">xt::event::XtEventQueue::XtEventQueue</a></div><div class="ttdeci">XtEventQueue()</div><div class="ttdoc">Public constructor. </div><div class="ttdef"><b>Definition:</b> <a href="XtEventQueue_8cpp_source.html#l00011">XtEventQueue.cpp:11</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html">xt::event::XtEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8h_source.html#l00020">XtEvent.h:20</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEventQueue_html_a931c3368d233f3c64c3caaebe916e20c"><div class="ttname"><a href="classxt_1_1event_1_1XtEventQueue.html#a931c3368d233f3c64c3caaebe916e20c">xt::event::XtEventQueue::resolveEvents</a></div><div class="ttdeci">void resolveEvents()</div><div class="ttdoc">Resolves event in the queue. </div><div class="ttdef"><b>Definition:</b> <a href="XtEventQueue_8cpp_source.html#l00029">XtEventQueue.cpp:29</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEventQueue_html_a08de7d4c0c4f6ab674f9b109c5d85aa2"><div class="ttname"><a href="classxt_1_1event_1_1XtEventQueue.html#a08de7d4c0c4f6ab674f9b109c5d85aa2">xt::event::XtEventQueue::_tail</a></div><div class="ttdeci">unsigned int _tail</div><div class="ttdoc">Reading end of the deque. </div><div class="ttdef"><b>Definition:</b> <a href="XtEventQueue_8h_source.html#l00041">XtEventQueue.h:41</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEventQueue_html"><div class="ttname"><a href="classxt_1_1event_1_1XtEventQueue.html">xt::event::XtEventQueue</a></div><div class="ttdoc">Event queue class. </div><div class="ttdef"><b>Definition:</b> <a href="XtEventQueue_8h_source.html#l00033">XtEventQueue.h:33</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по XorTech. Последние изменения: Вс 20 Авг 2017 00:57:49. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

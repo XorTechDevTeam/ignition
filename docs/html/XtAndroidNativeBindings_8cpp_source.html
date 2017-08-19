@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>XorTech: Исходный файл src/Core/Platform/Android/XtAndroidNativeBindings.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">XorTech
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">A simple, efficient and convenient 2D cross-platform engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html">Core</a></li><li class="navelem"><a class="el" href="dir_5d0f1e2c5e9d75719b03c620ffcdb8ee.html">Platform</a></li><li class="navelem"><a class="el" href="dir_a25ab68b50abe837b31aa6acac14cb1c.html">Android</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">XtAndroidNativeBindings.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by droncode on 8/12/17.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#if defined(XT_ANDROID)</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;XtCommon.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Core/XtEngine.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Core/PlatformEntry.h&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Core/Platform/Android/XtDefaultDevice.h&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;Core/Render/IXtRenderDevice.h&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;XtAndroidNative.h&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacext.html">xt</a>;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacext_1_1platform.html">xt::platform</a>;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;JNIEXPORT <span class="keywordtype">void</span> JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtInit(JNIEnv * env, jobject obj,  jint width, jint height) {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    xt::platform::g_xtDebugDevice = <a class="code" href="structxt_1_1XtDeviceParams.html">xt::XtDeviceParams</a>(width, height, <span class="keyword">true</span>);    <span class="comment">//android always fullscreen, exclude Samsung tablets</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    XT_main();</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;JNIEXPORT <span class="keywordtype">void</span> JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtUpdate(JNIEnv * env, jobject obj) {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">//TODO: Iterate engine</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    xt::XtEngine::getInstance()-&gt;<a class="code" href="classxt_1_1XtEngine.html#ab4e5bacbde839f416f7c0da34d5d489a">update</a>();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;JNIEXPORT <span class="keywordtype">void</span> JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtOnPause(JNIEnv * env, jobject obj) {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    LOGMSG(<span class="stringliteral">&quot;*** Android::onPause called ***&quot;</span>);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    xt::XtEngine::getInstance()-&gt;<a class="code" href="classxt_1_1XtEngine.html#a31766d616bfecd35c7d249a731e044a4">pause</a>();</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;JNIEXPORT <span class="keywordtype">void</span> JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtOnResume(JNIEnv * env, jobject obj) {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    LOGMSG(<span class="stringliteral">&quot;*** Android::onResume called ***&quot;</span>);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    xt::XtEngine::getInstance()-&gt;<a class="code" href="classxt_1_1XtEngine.html#aecd9492d2b33c7fafbbea6fbb25d9ed1">resume</a>();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;JNIEXPORT <span class="keywordtype">void</span> JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtOnDestroy(JNIEnv * env, jobject obj) {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    LOGMSG(<span class="stringliteral">&quot;*** Android::onDestroy called ***&quot;</span>);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    xt::XtEngine::getInstance()-&gt;<a class="code" href="classxt_1_1XtEngine.html#a90fe61c9f073aa9977d34d49f492623c">offline</a>(); <span class="comment">//close loop</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    xt::XtEngine::release();</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="structxt_1_1XtDeviceParams_html"><div class="ttname"><a href="structxt_1_1XtDeviceParams.html">xt::XtDeviceParams</a></div><div class="ttdoc">Базовые параметры рендера </div><div class="ttdef"><b>Definition:</b> <a href="XtDeviceParams_8h_source.html#l00012">XtDeviceParams.h:12</a></div></div>
+<div class="ttc" id="classxt_1_1XtEngine_html_ab4e5bacbde839f416f7c0da34d5d489a"><div class="ttname"><a href="classxt_1_1XtEngine.html#ab4e5bacbde839f416f7c0da34d5d489a">xt::XtEngine::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">обновляет все подсистемы движка </div><div class="ttdef"><b>Definition:</b> <a href="XtEngine_8cpp_source.html#l00097">XtEngine.cpp:97</a></div></div>
+<div class="ttc" id="namespacext_html"><div class="ttname"><a href="namespacext.html">xt</a></div><div class="ttdoc">XorTech Source Code. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8h_source.html#l00016">XtEvent.h:16</a></div></div>
+<div class="ttc" id="classxt_1_1XtEngine_html_a31766d616bfecd35c7d249a731e044a4"><div class="ttname"><a href="classxt_1_1XtEngine.html#a31766d616bfecd35c7d249a731e044a4">xt::XtEngine::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Ставит цикл обработки на паузу </div><div class="ttdef"><b>Definition:</b> <a href="XtEngine_8cpp_source.html#l00125">XtEngine.cpp:125</a></div></div>
+<div class="ttc" id="classxt_1_1XtEngine_html_aecd9492d2b33c7fafbbea6fbb25d9ed1"><div class="ttname"><a href="classxt_1_1XtEngine.html#aecd9492d2b33c7fafbbea6fbb25d9ed1">xt::XtEngine::resume</a></div><div class="ttdeci">void resume()</div><div class="ttdoc">Возвращает движок к обработке подсистем </div><div class="ttdef"><b>Definition:</b> <a href="XtEngine_8cpp_source.html#l00129">XtEngine.cpp:129</a></div></div>
+<div class="ttc" id="classxt_1_1XtEngine_html_a90fe61c9f073aa9977d34d49f492623c"><div class="ttname"><a href="classxt_1_1XtEngine.html#a90fe61c9f073aa9977d34d49f492623c">xt::XtEngine::offline</a></div><div class="ttdeci">void offline()</div><div class="ttdoc">Останавливает основной цикл обработки </div><div class="ttdef"><b>Definition:</b> <a href="XtEngine_8cpp_source.html#l00121">XtEngine.cpp:121</a></div></div>
+<div class="ttc" id="namespacext_1_1platform_html"><div class="ttname"><a href="namespacext_1_1platform.html">xt::platform</a></div><div class="ttdef"><b>Definition:</b> <a href="Android_2XtDebugDevice_8h_source.html#l00009">XtDebugDevice.h:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по XorTech. Последние изменения: Вс 20 Авг 2017 00:57:49. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>XorTech: Исходный файл src/Core/Log/XtLogManager.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">XorTech
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">A simple, efficient and convenient 2D cross-platform engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html">Core</a></li><li class="navelem"><a class="el" href="dir_1efe152df2f2e9cd3517b1174a4598d7.html">Log</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">XtLogManager.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by droncode on 8/15/17.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Core/Log/IXtLogService.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacext.html">xt</a> {</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>log {</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classxt_1_1log_1_1XtLogManager.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classxt_1_1log_1_1XtLogManager.html">XtLogManager</a> {</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">static</span> <a class="code" href="classxt_1_1log_1_1XtLogManager.html">XtLogManager</a> *_instance;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classxt_1_1log_1_1XtLogManager.html#aaa604b1d1b7a43f9da370306e59a74fd">   20</a></span>&#160;        <a class="code" href="classxt_1_1log_1_1IXtLogService.html">IXtLogService</a>*      <a class="code" href="classxt_1_1log_1_1XtLogManager.html#aaa604b1d1b7a43f9da370306e59a74fd">_service</a>;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classxt_1_1log_1_1XtLogManager.html">XtLogManager</a>();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        ~<a class="code" href="classxt_1_1log_1_1XtLogManager.html">XtLogManager</a>();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classxt_1_1log_1_1XtLogManager.html">XtLogManager</a>(<span class="keyword">const</span> <a class="code" href="classxt_1_1log_1_1XtLogManager.html">XtLogManager</a> &amp;copy) = <span class="keyword">delete</span>;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classxt_1_1log_1_1XtLogManager.html">XtLogManager</a>(<a class="code" href="classxt_1_1log_1_1XtLogManager.html">XtLogManager</a> &amp;&amp;move) = <span class="keyword">delete</span>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classxt_1_1log_1_1XtLogManager.html">XtLogManager</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classxt_1_1log_1_1XtLogManager.html">XtLogManager</a> &amp;copy) = <span class="keyword">delete</span>;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classxt_1_1log_1_1XtLogManager.html">XtLogManager</a> &amp;operator=(<a class="code" href="classxt_1_1log_1_1XtLogManager.html">XtLogManager</a> &amp;&amp;move)      = <span class="keyword">delete</span>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">static</span> <a class="code" href="classxt_1_1log_1_1XtLogManager.html">XtLogManager</a> *getInstance();</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> release();</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classxt_1_1log_1_1XtLogManager.html#aacd4c1b1fedde7aeacfb62614314aa55">operator()</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *format, ...);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    };</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div><div class="ttc" id="classxt_1_1log_1_1IXtLogService_html"><div class="ttname"><a href="classxt_1_1log_1_1IXtLogService.html">xt::log::IXtLogService</a></div><div class="ttdoc">Абстрактный класс сервиса логирования. </div><div class="ttdef"><b>Definition:</b> <a href="IXtLogService_8h_source.html#l00013">IXtLogService.h:13</a></div></div>
+<div class="ttc" id="namespacext_html"><div class="ttname"><a href="namespacext.html">xt</a></div><div class="ttdoc">XorTech Source Code. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8h_source.html#l00016">XtEvent.h:16</a></div></div>
+<div class="ttc" id="classxt_1_1log_1_1XtLogManager_html_aaa604b1d1b7a43f9da370306e59a74fd"><div class="ttname"><a href="classxt_1_1log_1_1XtLogManager.html#aaa604b1d1b7a43f9da370306e59a74fd">xt::log::XtLogManager::_service</a></div><div class="ttdeci">IXtLogService * _service</div><div class="ttdoc">Указатель на сервис обработчик. </div><div class="ttdef"><b>Definition:</b> <a href="XtLogManager_8h_source.html#l00020">XtLogManager.h:20</a></div></div>
+<div class="ttc" id="classxt_1_1log_1_1XtLogManager_html"><div class="ttname"><a href="classxt_1_1log_1_1XtLogManager.html">xt::log::XtLogManager</a></div><div class="ttdoc">Основной прокси для логов. </div><div class="ttdef"><b>Definition:</b> <a href="XtLogManager_8h_source.html#l00014">XtLogManager.h:14</a></div></div>
+<div class="ttc" id="classxt_1_1log_1_1XtLogManager_html_aacd4c1b1fedde7aeacfb62614314aa55"><div class="ttname"><a href="classxt_1_1log_1_1XtLogManager.html#aacd4c1b1fedde7aeacfb62614314aa55">xt::log::XtLogManager::operator()</a></div><div class="ttdeci">void operator()(const char *format,...)</div><div class="ttdoc">Вызывает сервис логов для записи лога в журнал </div><div class="ttdef"><b>Definition:</b> <a href="XtLogManager_8cpp_source.html#l00054">XtLogManager.cpp:54</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по XorTech. Последние изменения: Вс 20 Авг 2017 00:57:49. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

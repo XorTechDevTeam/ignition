@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>XorTech: Класс xt::event::XtEventQueue</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">XorTech
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">A simple, efficient and convenient 2D cross-platform engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacext.html">xt</a></li><li class="navelem"><b>event</b></li><li class="navelem"><a class="el" href="classxt_1_1event_1_1XtEventQueue.html">XtEventQueue</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="classxt_1_1event_1_1XtEventQueue-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс xt::event::XtEventQueue</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Event queue class.  
+ <a href="classxt_1_1event_1_1XtEventQueue.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="XtEventQueue_8h_source.html">XtEventQueue.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса xt::event::XtEventQueue:</div>
+<div class="dyncontent">
+<div class="center"><img src="classxt_1_1event_1_1XtEventQueue__coll__graph.png" border="0" usemap="#xt_1_1event_1_1XtEventQueue_coll__map" alt="Collaboration graph"/></div>
+<map name="xt_1_1event_1_1XtEventQueue_coll__map" id="xt_1_1event_1_1XtEventQueue_coll__map">
+<area shape="rect" id="node2" href="classxt_1_1event_1_1XtEvent.html" title="xt::event::XtEvent" alt="" coords="25,5,153,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a796787b983fe1d359a6721bf144f57be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1event_1_1XtEventQueue.html#a796787b983fe1d359a6721bf144f57be">XtEventQueue</a> ()</td></tr>
+<tr class="memdesc:a796787b983fe1d359a6721bf144f57be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public constructor.  <a href="#a796787b983fe1d359a6721bf144f57be">Подробнее...</a><br /></td></tr>
+<tr class="separator:a796787b983fe1d359a6721bf144f57be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb84737aa4703373d495f8510e76cf70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1event_1_1XtEventQueue.html#aeb84737aa4703373d495f8510e76cf70">pushEvent</a> (<a class="el" href="classxt_1_1event_1_1XtEvent.html">XtEvent</a> *ev)</td></tr>
+<tr class="memdesc:aeb84737aa4703373d495f8510e76cf70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes event to the queue.  <a href="#aeb84737aa4703373d495f8510e76cf70">Подробнее...</a><br /></td></tr>
+<tr class="separator:aeb84737aa4703373d495f8510e76cf70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a931c3368d233f3c64c3caaebe916e20c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1event_1_1XtEventQueue.html#a931c3368d233f3c64c3caaebe916e20c">resolveEvents</a> ()</td></tr>
+<tr class="memdesc:a931c3368d233f3c64c3caaebe916e20c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves event in the queue.  <a href="#a931c3368d233f3c64c3caaebe916e20c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a931c3368d233f3c64c3caaebe916e20c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac89043afcaaf88ebc3de2794b10e8820"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1event_1_1XtEventQueue.html#ac89043afcaaf88ebc3de2794b10e8820">subscribe</a> (String evName, unsigned int subscriber)</td></tr>
+<tr class="memdesc:ac89043afcaaf88ebc3de2794b10e8820"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes a module to an event with name evName.  <a href="#ac89043afcaaf88ebc3de2794b10e8820">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac89043afcaaf88ebc3de2794b10e8820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:ae2a09cfbbbeab5385a9ef5c449d3efb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxt_1_1event_1_1XtEvent.html">XtEvent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1event_1_1XtEventQueue.html#ae2a09cfbbbeab5385a9ef5c449d3efb1">queue</a> [MAX_EVENTS]</td></tr>
+<tr class="memdesc:ae2a09cfbbbeab5385a9ef5c449d3efb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual event queue container.  <a href="#ae2a09cfbbbeab5385a9ef5c449d3efb1">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae2a09cfbbbeab5385a9ef5c449d3efb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38ec17e2608afb0cc8b8621e85f4d6e2"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1event_1_1XtEventQueue.html#a38ec17e2608afb0cc8b8621e85f4d6e2">_head</a></td></tr>
+<tr class="memdesc:a38ec17e2608afb0cc8b8621e85f4d6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writing end of the deque.  <a href="#a38ec17e2608afb0cc8b8621e85f4d6e2">Подробнее...</a><br /></td></tr>
+<tr class="separator:a38ec17e2608afb0cc8b8621e85f4d6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08de7d4c0c4f6ab674f9b109c5d85aa2"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1event_1_1XtEventQueue.html#a08de7d4c0c4f6ab674f9b109c5d85aa2">_tail</a></td></tr>
+<tr class="memdesc:a08de7d4c0c4f6ab674f9b109c5d85aa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reading end of the deque.  <a href="#a08de7d4c0c4f6ab674f9b109c5d85aa2">Подробнее...</a><br /></td></tr>
+<tr class="separator:a08de7d4c0c4f6ab674f9b109c5d85aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac53eab76c1b6681ec7e12c77d3f90b9e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac53eab76c1b6681ec7e12c77d3f90b9e"></a>
+UnorderedMap&lt; String, List&lt; unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1event_1_1XtEventQueue.html#ac53eab76c1b6681ec7e12c77d3f90b9e">subscribers</a></td></tr>
+<tr class="memdesc:ac53eab76c1b6681ec7e12c77d3f90b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map that associates event names with modules that are subscribed to those events. <br /></td></tr>
+<tr class="separator:ac53eab76c1b6681ec7e12c77d3f90b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Event queue class. </p>
+<p>Utilizes a version of deque over an array. Implements a subscription map for dispatching events that are meant to be broadcast. Allows for event pushing, resolving and module subscription. <a class="el" href="classxt_1_1event_1_1XtEvent.html">XtEvent</a> objects are created by modules and destroyed within <a class="el" href="classxt_1_1event_1_1XtEventQueue.html" title="Event queue class. ">XtEventQueue</a>: a module developer shouldn't care about event memory management. </p>
+
+<p>См. определение в файле <a class="el" href="XtEventQueue_8h_source.html">XtEventQueue.h</a> строка <a class="el" href="XtEventQueue_8h_source.html#l00033">33</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a796787b983fe1d359a6721bf144f57be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XtEventQueue::XtEventQueue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Public constructor. </p>
+<p>Does really nothing but initialize the deque. </p>
+
+<p>См. определение в файле <a class="el" href="XtEventQueue_8cpp_source.html">XtEventQueue.cpp</a> строка <a class="el" href="XtEventQueue_8cpp_source.html#l00011">11</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="aeb84737aa4703373d495f8510e76cf70"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void XtEventQueue::pushEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxt_1_1event_1_1XtEvent.html">XtEvent</a> *&#160;</td>
+          <td class="paramname"><em>ev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pushes event to the queue. </p>
+<p>As of push, the module supposedly no longer controls the event. And in no circumstance it should dispose of the event object; the disposal is handled by queue after resolving. An overflow may lead to an unfortunate event where no events will be handled during resolution, at all. This circumstance is checked but currently is not dealt with in any way. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ev</td><td>pointer to an <a class="el" href="classxt_1_1event_1_1XtEvent.html">XtEvent</a> to be queued. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="XtEventQueue_8cpp_source.html">XtEventQueue.cpp</a> строка <a class="el" href="XtEventQueue_8cpp_source.html#l00016">16</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a931c3368d233f3c64c3caaebe916e20c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void XtEventQueue::resolveEvents </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resolves event in the queue. </p>
+<p>Directed (with precise recipient ID) events are dispatched directly to recipient module. Broadcast (with recipient = XtEvBroadcast) are dispatched consequently to each module registered to an event with this name. </p><dl class="section see"><dt>См. также</dt><dd><a class="el" href="classxt_1_1event_1_1XtEventQueue.html#ac89043afcaaf88ebc3de2794b10e8820" title="Subscribes a module to an event with name evName. ">subscribe()</a> </dd></dl>
+
+<p>См. определение в файле <a class="el" href="XtEventQueue_8cpp_source.html">XtEventQueue.cpp</a> строка <a class="el" href="XtEventQueue_8cpp_source.html#l00029">29</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac89043afcaaf88ebc3de2794b10e8820"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void XtEventQueue::subscribe </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>evName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>subscriber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subscribes a module to an event with name evName. </p>
+<p>Once subscribed, a module will handle any broadcast events with name equal to evName. However, it will not intercept any directed events, so keep that in mind when designing interaction between several modules of your own. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">evName</td><td>the name of broadcast events that the module will handle. </td></tr>
+    <tr><td class="paramname">subscriber</td><td>the ID of the subscriber module. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="XtEventQueue_8cpp_source.html">XtEventQueue.cpp</a> строка <a class="el" href="XtEventQueue_8cpp_source.html#l00056">56</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="a38ec17e2608afb0cc8b8621e85f4d6e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int xt::event::XtEventQueue::_head</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writing end of the deque. </p>
+
+<p>См. определение в файле <a class="el" href="XtEventQueue_8h_source.html">XtEventQueue.h</a> строка <a class="el" href="XtEventQueue_8h_source.html#l00040">40</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a08de7d4c0c4f6ab674f9b109c5d85aa2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int xt::event::XtEventQueue::_tail</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reading end of the deque. </p>
+
+<p>См. определение в файле <a class="el" href="XtEventQueue_8h_source.html">XtEventQueue.h</a> строка <a class="el" href="XtEventQueue_8h_source.html#l00041">41</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae2a09cfbbbeab5385a9ef5c449d3efb1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxt_1_1event_1_1XtEvent.html">XtEvent</a>* xt::event::XtEventQueue::queue[MAX_EVENTS]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actual event queue container. </p>
+<p>Holds pointers to <a class="el" href="classxt_1_1event_1_1XtEvent.html">XtEvent</a> objects. Is NOT initialized, but is guaranteed to have pointers to real data on read. </p>
+
+<p>См. определение в файле <a class="el" href="XtEventQueue_8h_source.html">XtEventQueue.h</a> строка <a class="el" href="XtEventQueue_8h_source.html#l00035">35</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/Core/Event/<a class="el" href="XtEventQueue_8h_source.html">XtEventQueue.h</a></li>
+<li>src/Core/Event/<a class="el" href="XtEventQueue_8cpp_source.html">XtEventQueue.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по XorTech. Последние изменения: Вс 20 Авг 2017 00:57:49. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

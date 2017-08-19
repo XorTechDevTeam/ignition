@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>XorTech: Класс xt::input::IXtInputObserver</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">XorTech
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">A simple, efficient and convenient 2D cross-platform engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacext.html">xt</a></li><li class="navelem"><b>input</b></li><li class="navelem"><a class="el" href="classxt_1_1input_1_1IXtInputObserver.html">IXtInputObserver</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classxt_1_1input_1_1IXtInputObserver-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс xt::input::IXtInputObserver</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Слушатель событий из системы ввода.  
+ <a href="classxt_1_1input_1_1IXtInputObserver.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="IXtInputObserver_8h_source.html">IXtInputObserver.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aed8d9307b9a2f0b0af1aedf6816493c4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1input_1_1IXtInputObserver.html#aed8d9307b9a2f0b0af1aedf6816493c4">onKeyboardEvent</a> (const <a class="el" href="structxt_1_1input_1_1KeyboardEvent.html">KeyboardEvent</a> &amp;keyboardEvent)</td></tr>
+<tr class="memdesc:aed8d9307b9a2f0b0af1aedf6816493c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получено событие от клавиатуры (клавиша и ее конфиг)  <a href="#aed8d9307b9a2f0b0af1aedf6816493c4">Подробнее...</a><br /></td></tr>
+<tr class="separator:aed8d9307b9a2f0b0af1aedf6816493c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cc8588466983d0d37c6f63d6e804775"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1input_1_1IXtInputObserver.html#a4cc8588466983d0d37c6f63d6e804775">onTouchEvent</a> (const Vector&lt; <a class="el" href="structxt_1_1input_1_1TapInfo.html">TapInfo</a> &gt; &amp;tapVector)</td></tr>
+<tr class="memdesc:a4cc8588466983d0d37c6f63d6e804775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получено событие тача (или мультитача)  <a href="#a4cc8588466983d0d37c6f63d6e804775">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4cc8588466983d0d37c6f63d6e804775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4906ee792260948ee9caa9c5417160ff"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1input_1_1IXtInputObserver.html#a4906ee792260948ee9caa9c5417160ff">onScrollEvent</a> (double x, double y)</td></tr>
+<tr class="memdesc:a4906ee792260948ee9caa9c5417160ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">События скролла  <a href="#a4906ee792260948ee9caa9c5417160ff">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4906ee792260948ee9caa9c5417160ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Слушатель событий из системы ввода. </p>
+<p>Пока что 3 основных источника - мышь, клава, тач </p>
+
+<p>См. определение в файле <a class="el" href="IXtInputObserver_8h_source.html">IXtInputObserver.h</a> строка <a class="el" href="IXtInputObserver_8h_source.html#l00014">14</a></p>
+</div><h2 class="groupheader">Методы</h2>
+<a class="anchor" id="aed8d9307b9a2f0b0af1aedf6816493c4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void xt::input::IXtInputObserver::onKeyboardEvent </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structxt_1_1input_1_1KeyboardEvent.html">KeyboardEvent</a> &amp;&#160;</td>
+          <td class="paramname"><em>keyboardEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получено событие от клавиатуры (клавиша и ее конфиг) </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keyboardEvent</td><td>- описание события </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="IXtInputObserver_8h_source.html">IXtInputObserver.h</a> строка <a class="el" href="IXtInputObserver_8h_source.html#l00020">20</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4906ee792260948ee9caa9c5417160ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void xt::input::IXtInputObserver::onScrollEvent </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>События скролла </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>- дельта по X </td></tr>
+    <tr><td class="paramname">y</td><td>- дельта по Y </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="IXtInputObserver_8h_source.html">IXtInputObserver.h</a> строка <a class="el" href="IXtInputObserver_8h_source.html#l00031">31</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4cc8588466983d0d37c6f63d6e804775"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void xt::input::IXtInputObserver::onTouchEvent </td>
+          <td>(</td>
+          <td class="paramtype">const Vector&lt; <a class="el" href="structxt_1_1input_1_1TapInfo.html">TapInfo</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tapVector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получено событие тача (или мультитача) </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tapVector</td><td>- вектор точек нажатия </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="IXtInputObserver_8h_source.html">IXtInputObserver.h</a> строка <a class="el" href="IXtInputObserver_8h_source.html#l00025">25</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/Core/Input/<a class="el" href="IXtInputObserver_8h_source.html">IXtInputObserver.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по XorTech. Последние изменения: Вс 20 Авг 2017 00:57:49. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

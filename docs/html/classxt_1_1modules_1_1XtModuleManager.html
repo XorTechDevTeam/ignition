@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>XorTech: Класс xt::modules::XtModuleManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">XorTech
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">A simple, efficient and convenient 2D cross-platform engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacext.html">xt</a></li><li class="navelem"><b>modules</b></li><li class="navelem"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pri-methods">Закрытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="#pri-static-attribs">Закрытые статические данные</a> &#124;
+<a href="classxt_1_1modules_1_1XtModuleManager-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс xt::modules::XtModuleManager</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Менеджер модулей.  
+ <a href="classxt_1_1modules_1_1XtModuleManager.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="XtModuleManager_8h_source.html">XtModuleManager.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса xt::modules::XtModuleManager:</div>
+<div class="dyncontent">
+<div class="center"><img src="classxt_1_1modules_1_1XtModuleManager__coll__graph.png" border="0" usemap="#xt_1_1modules_1_1XtModuleManager_coll__map" alt="Collaboration graph"/></div>
+<map name="xt_1_1modules_1_1XtModuleManager_coll__map" id="xt_1_1modules_1_1XtModuleManager_coll__map">
+<area shape="rect" id="node2" href="classxt_1_1event_1_1XtEventQueue.html" title="Event queue class. " alt="" coords="23,95,190,121"/>
+<area shape="rect" id="node3" href="classxt_1_1event_1_1XtEvent.html" title="xt::event::XtEvent" alt="" coords="43,5,171,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a6c24cb57a8f82e3c405d527cf003e174"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c24cb57a8f82e3c405d527cf003e174"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>XtModuleManager</b> (const <a class="el" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a> &amp;copy)=delete</td></tr>
+<tr class="separator:a6c24cb57a8f82e3c405d527cf003e174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dc6adc5f4207433594fd8872eb001c8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8dc6adc5f4207433594fd8872eb001c8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>XtModuleManager</b> (const <a class="el" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a> &amp;&amp;move)=delete</td></tr>
+<tr class="separator:a8dc6adc5f4207433594fd8872eb001c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acee60b759f246d68a67f224eaf47c69f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acee60b759f246d68a67f224eaf47c69f"></a>
+<a class="el" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a> &amp;copy)=delete</td></tr>
+<tr class="separator:acee60b759f246d68a67f224eaf47c69f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f8670c7a0a86cda8f0e4710eb97edd3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f8670c7a0a86cda8f0e4710eb97edd3"></a>
+<a class="el" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a> &amp;&amp;move)=delete</td></tr>
+<tr class="separator:a0f8670c7a0a86cda8f0e4710eb97edd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a1b31a70bdf5afdd276202c99a7e057"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html#a0a1b31a70bdf5afdd276202c99a7e057">init</a> ()</td></tr>
+<tr class="memdesc:a0a1b31a70bdf5afdd276202c99a7e057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует менеджер модулей.  <a href="#a0a1b31a70bdf5afdd276202c99a7e057">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0a1b31a70bdf5afdd276202c99a7e057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2d88370d20636845ddafae92b9ff06f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="XtModuleCommon_8h.html#a15c4a434432dc8d4b05b88356a5bbfa9">XtModRC</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html#aa2d88370d20636845ddafae92b9ff06f">addModule</a> (<a class="el" href="classxt_1_1modules_1_1XtModule.html">XtModule</a> *module)</td></tr>
+<tr class="memdesc:aa2d88370d20636845ddafae92b9ff06f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Регистрирует модуль module в менеджере.  <a href="#aa2d88370d20636845ddafae92b9ff06f">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa2d88370d20636845ddafae92b9ff06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a24077571049404d64c1b3b8740f00f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html#a0a24077571049404d64c1b3b8740f00f">sendEvent</a> (<a class="el" href="classxt_1_1event_1_1XtEvent.html">event::XtEvent</a> *ev)</td></tr>
+<tr class="memdesc:a0a24077571049404d64c1b3b8740f00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет сообщение ev в очередь событий.  <a href="#a0a24077571049404d64c1b3b8740f00f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0a24077571049404d64c1b3b8740f00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1628b98f36df82d22b1c06457d2933c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html#a1628b98f36df82d22b1c06457d2933c5">dispatchEvent</a> (<a class="el" href="classxt_1_1event_1_1XtEvent.html">event::XtEvent</a> *ev)</td></tr>
+<tr class="memdesc:a1628b98f36df82d22b1c06457d2933c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет событие ev требуемому модулю на обработку.  <a href="#a1628b98f36df82d22b1c06457d2933c5">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1628b98f36df82d22b1c06457d2933c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92923a70e1ba3d040eeb75ad76015e18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html#a92923a70e1ba3d040eeb75ad76015e18">resolveEvents</a> ()</td></tr>
+<tr class="memdesc:a92923a70e1ba3d040eeb75ad76015e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разрешает очередь событий.  <a href="#a92923a70e1ba3d040eeb75ad76015e18">Подробнее...</a><br /></td></tr>
+<tr class="separator:a92923a70e1ba3d040eeb75ad76015e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a7ef61f91f7bf99ff8a3f9677db2e7f86"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html#a7ef61f91f7bf99ff8a3f9677db2e7f86">getInstance</a> ()</td></tr>
+<tr class="memdesc:a7ef61f91f7bf99ff8a3f9677db2e7f86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Фабрика менеджера модулей.  <a href="#a7ef61f91f7bf99ff8a3f9677db2e7f86">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7ef61f91f7bf99ff8a3f9677db2e7f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ab5ae4d72401fe1b7f6ef7547d277e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2ab5ae4d72401fe1b7f6ef7547d277e0"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html#a2ab5ae4d72401fe1b7f6ef7547d277e0">release</a> ()</td></tr>
+<tr class="memdesc:a2ab5ae4d72401fe1b7f6ef7547d277e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Освобождает память, занятую одиночкой. <br /></td></tr>
+<tr class="separator:a2ab5ae4d72401fe1b7f6ef7547d277e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a1052016157e7cb33027d8b0c55d6973e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html#a1052016157e7cb33027d8b0c55d6973e">XtModuleManager</a> ()</td></tr>
+<tr class="memdesc:a1052016157e7cb33027d8b0c55d6973e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приватный конструктор.  <a href="#a1052016157e7cb33027d8b0c55d6973e">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1052016157e7cb33027d8b0c55d6973e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80cafe48f68c442308408c8e7691f11c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html#a80cafe48f68c442308408c8e7691f11c">~XtModuleManager</a> ()</td></tr>
+<tr class="memdesc:a80cafe48f68c442308408c8e7691f11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приватный деструктор.  <a href="#a80cafe48f68c442308408c8e7691f11c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a80cafe48f68c442308408c8e7691f11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a352ba6472da017c462fa2b8d8a09eeac"><td class="memItemLeft" align="right" valign="top">Vector&lt; <a class="el" href="classxt_1_1modules_1_1XtModule.html">XtModule</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html#a352ba6472da017c462fa2b8d8a09eeac">modules</a></td></tr>
+<tr class="memdesc:a352ba6472da017c462fa2b8d8a09eeac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Контейнер зарегистрированных модулей.  <a href="#a352ba6472da017c462fa2b8d8a09eeac">Подробнее...</a><br /></td></tr>
+<tr class="separator:a352ba6472da017c462fa2b8d8a09eeac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0128e1e9e803acab50c66c08fbb6e103"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxt_1_1event_1_1XtEventQueue.html">event::XtEventQueue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html#a0128e1e9e803acab50c66c08fbb6e103">_evQueue</a></td></tr>
+<tr class="memdesc:a0128e1e9e803acab50c66c08fbb6e103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очередь событий.  <a href="#a0128e1e9e803acab50c66c08fbb6e103">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0128e1e9e803acab50c66c08fbb6e103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Закрытые статические данные</h2></td></tr>
+<tr class="memitem:aa1ad9bc2331a1f83446a2aa94b27d352"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html#aa1ad9bc2331a1f83446a2aa94b27d352">_instance</a> = nullptr</td></tr>
+<tr class="memdesc:aa1ad9bc2331a1f83446a2aa94b27d352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Указатель на экземпляр менеджера модулей.  <a href="#aa1ad9bc2331a1f83446a2aa94b27d352">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa1ad9bc2331a1f83446a2aa94b27d352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Менеджер модулей. </p>
+<p>Реализован классом-одиночкой, что позволяет получить к нему доступ из любой части кода, в частности, из модулей. Предоставляет весь необходимый функционал по регистрации модулей и их обмену событиями. </p>
+
+<p>См. определение в файле <a class="el" href="XtModuleManager_8h_source.html">XtModuleManager.h</a> строка <a class="el" href="XtModuleManager_8h_source.html#l00025">25</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a1052016157e7cb33027d8b0c55d6973e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">XtModuleManager::XtModuleManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Приватный конструктор. </p>
+<p>Инициализирует контейнеры и ссылки. </p>
+
+<p>См. определение в файле <a class="el" href="XtModuleManager_8cpp_source.html">XtModuleManager.cpp</a> строка <a class="el" href="XtModuleManager_8cpp_source.html#l00011">11</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a80cafe48f68c442308408c8e7691f11c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">XtModuleManager::~XtModuleManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Приватный деструктор. </p>
+<p>Освобождает занятую память. </p>
+
+<p>См. определение в файле <a class="el" href="XtModuleManager_8cpp_source.html">XtModuleManager.cpp</a> строка <a class="el" href="XtModuleManager_8cpp_source.html#l00015">15</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="aa2d88370d20636845ddafae92b9ff06f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="XtModuleCommon_8h.html#a15c4a434432dc8d4b05b88356a5bbfa9">XtModRC</a> XtModuleManager::addModule </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxt_1_1modules_1_1XtModule.html">XtModule</a> *&#160;</td>
+          <td class="paramname"><em>module</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Регистрирует модуль module в менеджере. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>указатель на модуль, требующий регистрации. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает значение XtModRC. </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>XtModRC </dd></dl>
+
+<p>См. определение в файле <a class="el" href="XtModuleManager_8cpp_source.html">XtModuleManager.cpp</a> строка <a class="el" href="XtModuleManager_8cpp_source.html#l00045">45</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1628b98f36df82d22b1c06457d2933c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void XtModuleManager::dispatchEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxt_1_1event_1_1XtEvent.html">event::XtEvent</a> *&#160;</td>
+          <td class="paramname"><em>ev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отправляет событие ev требуемому модулю на обработку. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ev</td><td>направляемое событие. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="XtModuleManager_8cpp_source.html">XtModuleManager.cpp</a> строка <a class="el" href="XtModuleManager_8cpp_source.html#l00077">77</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a7ef61f91f7bf99ff8a3f9677db2e7f86"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a> * XtModuleManager::getInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Фабрика менеджера модулей. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает указатель на объект-одиночку. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="XtModuleManager_8cpp_source.html">XtModuleManager.cpp</a> строка <a class="el" href="XtModuleManager_8cpp_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0a1b31a70bdf5afdd276202c99a7e057"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int XtModuleManager::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализирует менеджер модулей. </p>
+<p>В числе прочего, добавляет в нулевой индекс нулевой модуль. </p><dl class="section return"><dt>Возвращает</dt><dd>Возвращает 0, если инициализирован успешно. </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classXtNullModule.html" title="Нулевой модуль. ">XtNullModule</a> </dd></dl>
+
+<p>См. определение в файле <a class="el" href="XtModuleManager_8cpp_source.html">XtModuleManager.cpp</a> строка <a class="el" href="XtModuleManager_8cpp_source.html#l00035">35</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a92923a70e1ba3d040eeb75ad76015e18"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void XtModuleManager::resolveEvents </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Разрешает очередь событий. </p>
+<p>По факту просто делает соответствующий вызов в очереди событий. </p><dl class="section see"><dt>См. также</dt><dd>XtEventQueue </dd></dl>
+
+<p>См. определение в файле <a class="el" href="XtModuleManager_8cpp_source.html">XtModuleManager.cpp</a> строка <a class="el" href="XtModuleManager_8cpp_source.html#l00082">82</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0a24077571049404d64c1b3b8740f00f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void XtModuleManager::sendEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxt_1_1event_1_1XtEvent.html">event::XtEvent</a> *&#160;</td>
+          <td class="paramname"><em>ev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отправляет сообщение ev в очередь событий. </p>
+<p>Всего лишь перенаправляет вызов от модуля к очереди событий. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ev</td><td>указатель на событие. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="XtModuleManager_8cpp_source.html">XtModuleManager.cpp</a> строка <a class="el" href="XtModuleManager_8cpp_source.html#l00073">73</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="a0128e1e9e803acab50c66c08fbb6e103"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxt_1_1event_1_1XtEventQueue.html">event::XtEventQueue</a>* xt::modules::XtModuleManager::_evQueue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Очередь событий. </p>
+<dl class="section see"><dt>См. также</dt><dd>XtEventQueue </dd></dl>
+
+<p>См. определение в файле <a class="el" href="XtModuleManager_8h_source.html">XtModuleManager.h</a> строка <a class="el" href="XtModuleManager_8h_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa1ad9bc2331a1f83446a2aa94b27d352"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxt_1_1modules_1_1XtModuleManager.html">XtModuleManager</a> * XtModuleManager::_instance = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Указатель на экземпляр менеджера модулей. </p>
+
+<p>См. определение в файле <a class="el" href="XtModuleManager_8h_source.html">XtModuleManager.h</a> строка <a class="el" href="XtModuleManager_8h_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a352ba6472da017c462fa2b8d8a09eeac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector&lt;<a class="el" href="classxt_1_1modules_1_1XtModule.html">XtModule</a>*&gt; xt::modules::XtModuleManager::modules</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Контейнер зарегистрированных модулей. </p>
+
+<p>См. определение в файле <a class="el" href="XtModuleManager_8h_source.html">XtModuleManager.h</a> строка <a class="el" href="XtModuleManager_8h_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/Modules/<a class="el" href="XtModuleManager_8h_source.html">XtModuleManager.h</a></li>
+<li>src/Modules/<a class="el" href="XtModuleManager_8cpp_source.html">XtModuleManager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по XorTech. Последние изменения: Вс 20 Авг 2017 00:57:49. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

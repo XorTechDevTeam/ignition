@@ -1,0 +1,5 @@
+<map id="xt::log::IXtLogService" name="xt::log::IXtLogService">
+<area shape="rect" id="node2" href="$classxt_1_1log_1_1XtAndroidLogService.html" title="xt::log::XtAndroidLogService" alt="" coords="207,5,395,32"/>
+<area shape="rect" id="node3" href="$classxt_1_1log_1_1XtLinuxLogService.html" title="xt::log::XtLinuxLogService" alt="" coords="213,56,388,83"/>
+<area shape="rect" id="node4" href="$classxt_1_1log_1_1XtWindowsLogService.html" title="xt::log::XtWindowsLogService" alt="" coords="201,107,400,133"/>
+</map>

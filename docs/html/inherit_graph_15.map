@@ -1,0 +1,5 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="node1" href="$classxt_1_1render_1_1IXtRenderDevice.html" title="Базовый класс для любого рендера. " alt="" coords="5,31,191,57"/>
+<area shape="rect" id="node2" href="$classxt_1_1render_1_1XtDirectX11.html" title="xt::render::XtDirectX11" alt="" coords="239,5,395,32"/>
+<area shape="rect" id="node3" href="$classxt_1_1render_1_1XtOpenGL.html" title="xt::render::XtOpenGL" alt="" coords="243,56,390,83"/>
+</map>

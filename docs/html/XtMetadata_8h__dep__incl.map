@@ -1,0 +1,11 @@
+<map id="src/Core/XtMetadata.h" name="src/Core/XtMetadata.h">
+<area shape="rect" id="node2" href="$XtEngine_8h_source.html" title="src/Core/XtEngine.h" alt="" coords="615,80,755,107"/>
+<area shape="rect" id="node10" href="$XtMetadata_8cpp_source.html" title="src/Core/XtMetadata.cpp" alt="" coords="780,80,948,107"/>
+<area shape="rect" id="node3" href="$Android_2XtDefaultDevice_8cpp_source.html" title="src/Core/Platform/Android\l/XtDefaultDevice.cpp" alt="" coords="5,155,179,196"/>
+<area shape="rect" id="node4" href="$Linux_2XtDefaultDevice_8cpp_source.html" title="src/Core/Platform/Linux\l/XtDefaultDevice.cpp" alt="" coords="203,155,363,196"/>
+<area shape="rect" id="node5" href="$Windows_2XtDefaultDevice_8cpp_source.html" title="src/Core/Platform/Windows\l/XtDefaultDevice.cpp" alt="" coords="387,155,570,196"/>
+<area shape="rect" id="node6" href="$XtWindowInstance_8cpp_source.html" title="src/Core/Platform/Windows\l/XtWindowInstance.cpp" alt="" coords="594,155,777,196"/>
+<area shape="rect" id="node7" href="$PlatformEntry_8cpp_source.html" title="src/Core/PlatformEntry.cpp" alt="" coords="801,162,983,189"/>
+<area shape="rect" id="node8" href="$XtDirectX11_8cpp_source.html" title="src/Core/Render/DirectX\l/XtDirectX11.cpp" alt="" coords="1007,155,1174,196"/>
+<area shape="rect" id="node9" href="$XtEngine_8cpp_source.html" title="src/Core/XtEngine.cpp" alt="" coords="1199,162,1353,189"/>
+</map>

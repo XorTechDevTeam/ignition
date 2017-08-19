@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>XorTech: Исходный файл src/Core/Event/XtEvent.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">XorTech
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">A simple, efficient and convenient 2D cross-platform engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html">Core</a></li><li class="navelem"><a class="el" href="dir_dfcbce1c3be733c48796a99504df6c02.html">Event</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">XtEvent.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by rabbitlancer on 8/15/17.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="XtEvent_8h.html">XtEvent.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacext.html">xt</a>;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>event;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEvent.html#a0b29aaa5d64d89f7db4073c818d69a13">   10</a></span>&#160;<a class="code" href="classxt_1_1event_1_1XtEvent.html#a0b29aaa5d64d89f7db4073c818d69a13">XtEvent::XtEvent</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sender, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> recipient, String evName, String evContent) {</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    this-&gt;sender = <a class="code" href="classxt_1_1event_1_1XtEvent.html#a0cfd3f25d3d7283de2133239abc03403">sender</a>;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    this-&gt;recipient = <a class="code" href="classxt_1_1event_1_1XtEvent.html#aa7c8c64b009b3b0d619333e5645c1c45">recipient</a>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    this-&gt;evName = <a class="code" href="classxt_1_1event_1_1XtEvent.html#a7b37bcf1f1864e574a2e05b70c2a8d40">evName</a>;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    this-&gt;evContent = <a class="code" href="classxt_1_1event_1_1XtEvent.html#acdd65528316781c14f99fc9e280edea4">evContent</a>;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEvent.html#ac7687fe701c852f2c870dfc2789bfdda">   17</a></span>&#160;<a class="code" href="classxt_1_1event_1_1XtEvent.html#ac7687fe701c852f2c870dfc2789bfdda">XtEvent::~XtEvent</a>() {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEvent.html#aef9333b362aef0d2f914fb666bf921f0">   21</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classxt_1_1event_1_1XtEvent.html#aef9333b362aef0d2f914fb666bf921f0">XtEvent::setEvName</a>(String newEvName) {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    this-&gt;<a class="code" href="classxt_1_1event_1_1XtEvent.html#a7b37bcf1f1864e574a2e05b70c2a8d40">evName</a> = newEvName;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEvent.html#aa8c93f26c2f444a5e885b91eac0d4537">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classxt_1_1event_1_1XtEvent.html#aa8c93f26c2f444a5e885b91eac0d4537">XtEvent::setEvContent</a>(String newEvContent) {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    this-&gt;<a class="code" href="classxt_1_1event_1_1XtEvent.html#acdd65528316781c14f99fc9e280edea4">evContent</a> = newEvContent;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEvent.html#afc5ad1ecf63e63b9cc42c7c69d4b9e79">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classxt_1_1event_1_1XtEvent.html#afc5ad1ecf63e63b9cc42c7c69d4b9e79">XtEvent::setRecipient</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> newRecp) {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    this-&gt;<a class="code" href="classxt_1_1event_1_1XtEvent.html#aa7c8c64b009b3b0d619333e5645c1c45">recipient</a> = newRecp;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEvent.html#a5736fd277441ee57912d6bb9221550bb">   33</a></span>&#160;String &amp;<a class="code" href="classxt_1_1event_1_1XtEvent.html#a5736fd277441ee57912d6bb9221550bb">XtEvent::getEvName</a>() {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classxt_1_1event_1_1XtEvent.html#a7b37bcf1f1864e574a2e05b70c2a8d40">evName</a>;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEvent.html#a26c1d75b59099256b6f56b3bc7df4787">   37</a></span>&#160;String &amp;<a class="code" href="classxt_1_1event_1_1XtEvent.html#a26c1d75b59099256b6f56b3bc7df4787">XtEvent::getEvContent</a>() {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classxt_1_1event_1_1XtEvent.html#acdd65528316781c14f99fc9e280edea4">evContent</a>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEvent.html#a3622ba278bbc9e184f5a680c96c51a7b">   41</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classxt_1_1event_1_1XtEvent.html#a3622ba278bbc9e184f5a680c96c51a7b">XtEvent::getSender</a>() {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classxt_1_1event_1_1XtEvent.html#a0cfd3f25d3d7283de2133239abc03403">sender</a>;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classxt_1_1event_1_1XtEvent.html#ac0f413ac26b23e125971f21f4dba3b8f">   45</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classxt_1_1event_1_1XtEvent.html#ac0f413ac26b23e125971f21f4dba3b8f">XtEvent::getRecipient</a>() {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classxt_1_1event_1_1XtEvent.html#aa7c8c64b009b3b0d619333e5645c1c45">recipient</a>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div><div class="ttc" id="classxt_1_1event_1_1XtEvent_html_a0b29aaa5d64d89f7db4073c818d69a13"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html#a0b29aaa5d64d89f7db4073c818d69a13">xt::event::XtEvent::XtEvent</a></div><div class="ttdeci">XtEvent(unsigned int sender, unsigned int recipient, String evName, String evContent)</div><div class="ttdoc">XtEvent public constructor. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8cpp_source.html#l00010">XtEvent.cpp:10</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html_ac7687fe701c852f2c870dfc2789bfdda"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html#ac7687fe701c852f2c870dfc2789bfdda">xt::event::XtEvent::~XtEvent</a></div><div class="ttdeci">~XtEvent()</div><div class="ttdoc">XtEvent public destructor. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8cpp_source.html#l00017">XtEvent.cpp:17</a></div></div>
+<div class="ttc" id="XtEvent_8h_html"><div class="ttname"><a href="XtEvent_8h.html">XtEvent.h</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html_ac0f413ac26b23e125971f21f4dba3b8f"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html#ac0f413ac26b23e125971f21f4dba3b8f">xt::event::XtEvent::getRecipient</a></div><div class="ttdeci">unsigned int getRecipient()</div><div class="ttdoc">Getter method for recipient. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8cpp_source.html#l00045">XtEvent.cpp:45</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html_a26c1d75b59099256b6f56b3bc7df4787"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html#a26c1d75b59099256b6f56b3bc7df4787">xt::event::XtEvent::getEvContent</a></div><div class="ttdeci">String &amp; getEvContent()</div><div class="ttdoc">Getter method for evContent. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8cpp_source.html#l00037">XtEvent.cpp:37</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html_a0cfd3f25d3d7283de2133239abc03403"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html#a0cfd3f25d3d7283de2133239abc03403">xt::event::XtEvent::sender</a></div><div class="ttdeci">unsigned int sender</div><div class="ttdoc">Sender ID. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8h_source.html#l00022">XtEvent.h:22</a></div></div>
+<div class="ttc" id="namespacext_html"><div class="ttname"><a href="namespacext.html">xt</a></div><div class="ttdoc">XorTech Source Code. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8h_source.html#l00016">XtEvent.h:16</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html_afc5ad1ecf63e63b9cc42c7c69d4b9e79"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html#afc5ad1ecf63e63b9cc42c7c69d4b9e79">xt::event::XtEvent::setRecipient</a></div><div class="ttdeci">void setRecipient(unsigned int newRecp)</div><div class="ttdoc">Setter method for recipient. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8cpp_source.html#l00029">XtEvent.cpp:29</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html_aa7c8c64b009b3b0d619333e5645c1c45"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html#aa7c8c64b009b3b0d619333e5645c1c45">xt::event::XtEvent::recipient</a></div><div class="ttdeci">unsigned int recipient</div><div class="ttdoc">Recipient ID. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8h_source.html#l00023">XtEvent.h:23</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html_aef9333b362aef0d2f914fb666bf921f0"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html#aef9333b362aef0d2f914fb666bf921f0">xt::event::XtEvent::setEvName</a></div><div class="ttdeci">void setEvName(String newEvName)</div><div class="ttdoc">Setter method for evName. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8cpp_source.html#l00021">XtEvent.cpp:21</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html_a5736fd277441ee57912d6bb9221550bb"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html#a5736fd277441ee57912d6bb9221550bb">xt::event::XtEvent::getEvName</a></div><div class="ttdeci">String &amp; getEvName()</div><div class="ttdoc">Getter method for evName. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8cpp_source.html#l00033">XtEvent.cpp:33</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html_aa8c93f26c2f444a5e885b91eac0d4537"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html#aa8c93f26c2f444a5e885b91eac0d4537">xt::event::XtEvent::setEvContent</a></div><div class="ttdeci">void setEvContent(String newEvContent)</div><div class="ttdoc">Setter method for evContent. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8cpp_source.html#l00025">XtEvent.cpp:25</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html_a7b37bcf1f1864e574a2e05b70c2a8d40"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html#a7b37bcf1f1864e574a2e05b70c2a8d40">xt::event::XtEvent::evName</a></div><div class="ttdeci">String evName</div><div class="ttdoc">Event name string. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8h_source.html#l00030">XtEvent.h:30</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html_a3622ba278bbc9e184f5a680c96c51a7b"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html#a3622ba278bbc9e184f5a680c96c51a7b">xt::event::XtEvent::getSender</a></div><div class="ttdeci">unsigned int getSender()</div><div class="ttdoc">Getter method for sender. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8cpp_source.html#l00041">XtEvent.cpp:41</a></div></div>
+<div class="ttc" id="classxt_1_1event_1_1XtEvent_html_acdd65528316781c14f99fc9e280edea4"><div class="ttname"><a href="classxt_1_1event_1_1XtEvent.html#acdd65528316781c14f99fc9e280edea4">xt::event::XtEvent::evContent</a></div><div class="ttdeci">String evContent</div><div class="ttdoc">Event contents. </div><div class="ttdef"><b>Definition:</b> <a href="XtEvent_8h_source.html#l00031">XtEvent.h:31</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по XorTech. Последние изменения: Вс 20 Авг 2017 00:57:49. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>
