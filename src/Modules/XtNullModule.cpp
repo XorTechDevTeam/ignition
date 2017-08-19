@@ -25,6 +25,6 @@ int XtNullModule::init() {
     return 0;
 }
 
-void XtNullModule::handleEvent(event::XtEvent *ev) {
+void XtNullModule::handleEvent(const event::XtEvent *ev) {
     LOGMSG("Module nothing received an event. How is that even possible?");
 }
