@@ -1,6 +1,6 @@
 .idea/*
 build/*
-andoird/.idea
+android/.idea
 android/.*
 android/build
 android/app/.*

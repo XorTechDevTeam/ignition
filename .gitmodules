@@ -13,3 +13,6 @@
 [submodule "src/3rd/zlib"]
 	path = src/3rd/zlib
 	url = https://github.com/madler/zlib
+[submodule "src/3rd/libwebp"]
+	path = src/3rd/libwebp
+	url = https://chromium.googlesource.com/webm/libwebp

@@ -120,6 +120,10 @@ using namespace glm;
 
 #include <zlib.h>
 
+#include <webp/demux.h>
+#include <webp/types.h>
+#include <webp/decode.h>
+
 #include <Core/Log/XtLogManager.h>
 
 #ifndef NDEBUG
