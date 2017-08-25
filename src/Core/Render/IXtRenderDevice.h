@@ -42,6 +42,11 @@ namespace xt {
              * @param delta - разница во времени между кадрами
              */
             virtual void drawFrame(float delta) = 0;
+            /**
+             * @brief Переинициализация компонентов
+             * @return результат операции
+             */
+            virtual bool reInit() { return true; }
         };
     }
 }

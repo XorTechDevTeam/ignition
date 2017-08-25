@@ -20,5 +20,10 @@ namespace render {
         glClearColor(0.f, 0.f, 1.f, 1.0f);
         //TODO: Draw frame
     }
+
+    bool XtOpenGL::reInit() {
+        //TODO: Reload all textures, shaders and other staff
+        return true;
+    }
 }
 }

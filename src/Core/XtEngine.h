@@ -3,13 +3,14 @@
  */
 #pragma once
 
-#include <Core/Render/IXtRenderDevice.h>
-#include <Core/Input/XtInputManager.h>
-#include <Core/IXtPlatform.h>
-#include <Core/IXtTime.h>
-#include <Core/XtDeviceParams.h>
 #include <XtCommon.h>
+
 #include "XtMetadata.h"
+#include <Core/IXtTime.h>
+#include <Core/IXtPlatform.h>
+#include <Core/XtDeviceParams.h>
+#include <Core/Input/XtInputManager.h>
+#include <Core/Render/IXtRenderDevice.h>
 
 namespace xt {
     using namespace input;
@@ -29,6 +30,7 @@ namespace xt {
         IXtTime*        _systemTime;
         IXtTime*        _gameTime;
 
+        bool            _isInited;
         bool            _inLoop;
         bool            _isActive;
         double          _lastFrameTime;
@@ -74,11 +76,11 @@ namespace xt {
 
 		bool isActive() const { return _isActive; }
 
-        IXtTime* getSystemTime() { return _systemTime; }
-        IXtTime* getGameTime() { return _gameTime; }
-        IXtPlatform* getCurrentPlatform() { return _platform; }
-        XtInputManager* getInputManager() { return _inputManager; }
-        IXtRenderDevice* getRenderDevice() { return _renderDevice; }
+        IXtTime* getSystemTime() const { return _systemTime; }
+        IXtTime* getGameTime() const { return _gameTime; }
+        IXtPlatform* getCurrentPlatform() const { return _platform; }
+        XtInputManager* getInputManager() const { return _inputManager; }
+        IXtRenderDevice* getRenderDevice() const { return _renderDevice; }
 		double getLastFrameTime() const { return _lastFrameTime; }
 
 		void setLastFrameTime(double time) { _lastFrameTime = time; }
