@@ -11,10 +11,12 @@
 #include <Core/XtDeviceParams.h>
 #include <Core/Input/XtInputManager.h>
 #include <Core/Render/IXtRenderDevice.h>
+#include <Core/FileSystem/XtFileSystemManager.h>
 
 namespace xt {
     using namespace input;
     using namespace render;
+    using namespace filesystem;
 
     class XtEngine {
     private:
@@ -24,6 +26,7 @@ namespace xt {
         XtDeviceParams   _initParams;
         XtInputManager*  _inputManager;
         IXtRenderDevice* _renderDevice;
+        XtFileSystemManager* _fsManager;
 
         XtMetadata*     _metadata;
 
@@ -81,6 +84,7 @@ namespace xt {
         IXtPlatform* getCurrentPlatform() const { return _platform; }
         XtInputManager* getInputManager() const { return _inputManager; }
         IXtRenderDevice* getRenderDevice() const { return _renderDevice; }
+        XtFileSystemManager* getFileSystemManager() const { return _fsManager; }
 		double getLastFrameTime() const { return _lastFrameTime; }
 
 		void setLastFrameTime(double time) { _lastFrameTime = time; }

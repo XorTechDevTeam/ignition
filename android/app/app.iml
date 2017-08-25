@@ -112,14 +112,32 @@
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
+    <content url="file://$MODULE_DIR$/../../src/3rd/AngelScript/source">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/3rd/AngelScript/source" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../src/3rd/zlib">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/3rd/zlib" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../src/3rd/zlib/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/3rd/zlib/test" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../src/Core">
       <sourceFolder url="file://$MODULE_DIR$/../../src/Core" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../src/Core/Event">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/Core/Event" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../src/Core/FileSystem">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/Core/FileSystem" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../src/Core/Input">
       <sourceFolder url="file://$MODULE_DIR$/../../src/Core/Input" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../src/Core/Log">
       <sourceFolder url="file://$MODULE_DIR$/../../src/Core/Log" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../src/Core/Logic">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/Core/Logic" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../src/Core/Platform/Android">
       <sourceFolder url="file://$MODULE_DIR$/../../src/Core/Platform/Android" isTestSource="false" />
@@ -129,6 +147,9 @@
     </content>
     <content url="file://$MODULE_DIR$/../../src/Core/Time">
       <sourceFolder url="file://$MODULE_DIR$/../../src/Core/Time" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../src/Modules">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/Modules" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

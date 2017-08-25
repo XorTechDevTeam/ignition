@@ -15,6 +15,7 @@ namespace xt {
                            _initParams(XtDeviceParams()),
                            _inputManager(nullptr),
                            _renderDevice(nullptr),
+                           _fsManager(nullptr),
                            _systemTime(nullptr),
                            _gameTime(nullptr),
                            _isInited(false),
@@ -37,6 +38,10 @@ namespace xt {
         if (_systemTime != nullptr) {
             delete _systemTime;
             _systemTime = nullptr;
+        }
+        if (_fsManager != nullptr) {
+            delete _fsManager;
+            _fsManager = nullptr;
         }
 
         xt::logic::XtLogic::release();
@@ -64,6 +69,7 @@ namespace xt {
             _platform = new xt::platform::XtDefaultDevice();
             _inputManager = new xt::input::XtInputManager();
             _systemTime = new xt::time::XtSystemTime();
+            _fsManager = new XtFileSystemManager();
             _gameTime = nullptr;
             _lastFrameTime = _systemTime->getTime();
 

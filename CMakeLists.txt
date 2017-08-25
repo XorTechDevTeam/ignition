@@ -29,6 +29,7 @@ if (NOT PLATFORM STREQUAL "NONE")
             src/Core/Event
             src/Core/Logic
             src/Core/Log
+            src/Core/FileSystem
             src/Modules)
 
     set(XT_INCLUDES src)

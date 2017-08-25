@@ -111,6 +111,7 @@ using Guard = std::lock_guard<std::mutex>;
 template <typename T> using Vector = std::vector<T>;
 template <typename T> using List = std::forward_list<T>;
 template <typename T> using Queue = std::queue<T>;
+template <typename T> using Set = std::set<T>;
 template <typename K, typename V> using Map = std::map<K, V>;
 template <typename K, typename V> using UnorderedMap = std::unordered_map<K, V>;
 template <typename K, typename V> using Pair = std::pair<K, V>;
@@ -135,3 +136,5 @@ using namespace glm;
 #else
 #error "Not supported"
 #endif
+
+#define XT_MAX_FILE_BUFFER 4096

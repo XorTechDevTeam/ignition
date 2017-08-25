@@ -19,6 +19,9 @@ ANDROID:
 	cd android && ./gradlew assembleDebug
 	adb install -r ./android/app/build/outputs/apk/app-debug.apk
 
+ANDROID_UPLOAD:
+	adb install -r ./android/app/build/outputs/apk/app-debug.apk
+
 WIN32:
 	cmake . -B./build/Win32 -DPLATFORM:STRING="WIN32" -DPROJECT_NAME:STRING=${XT_PROJECT}
 	@echo "Use Microsoft Visual Studio to continue"
