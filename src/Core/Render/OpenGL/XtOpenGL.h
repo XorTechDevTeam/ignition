@@ -12,6 +12,7 @@ namespace render {
         bool init() override;
         void changeViewport(int width, int height) override;
         void drawFrame(float delta) override;
+        bool reInit() override;
     };
 }
 }

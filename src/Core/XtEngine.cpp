@@ -17,6 +17,7 @@ namespace xt {
                            _renderDevice(nullptr),
                            _systemTime(nullptr),
                            _gameTime(nullptr),
+                           _isInited(false),
                            _inLoop(true),
                            _isActive(true) {}
 
@@ -58,38 +59,51 @@ namespace xt {
     }
 
     bool XtEngine::init(const XtDeviceParams &deviceParams) {
-        _initParams = deviceParams;
-        _platform = new xt::platform::XtDefaultDevice();
-        _inputManager = new xt::input::XtInputManager();
-        _systemTime = new xt::time::XtSystemTime();
-        _gameTime = nullptr;
-        _lastFrameTime = _systemTime->getTime();
+        if (!_isInited) {
+            _initParams = deviceParams;
+            _platform = new xt::platform::XtDefaultDevice();
+            _inputManager = new xt::input::XtInputManager();
+            _systemTime = new xt::time::XtSystemTime();
+            _gameTime = nullptr;
+            _lastFrameTime = _systemTime->getTime();
 
-        _metadata = new xt::XtMetadata();
-        _gameTime = nullptr;    //TODO: Create class for game time
-        _lastFrameTime = _systemTime->getTime();
+            _metadata = new xt::XtMetadata();
+            _gameTime = nullptr;    //TODO: Create class for game time
+            _lastFrameTime = _systemTime->getTime();
         
-        if (!_platform->createDevice(_initParams.width, _initParams.height, _initParams.fullscreen, false)) {
-            LOGMSG("Unable to create platform device!");
-            return false;
-        }
+            if (!_platform->createDevice(_initParams.width, _initParams.height, _initParams.fullscreen, false)) {
+                LOGMSG("Unable to create platform device!");
+                return false;
+            }
 
 #if defined(XT_LINUX) || defined(XT_ANDROID) || defined(XT_IOS)
-        _renderDevice = new xt::render::XtOpenGL(_initParams.width, _initParams.height);
+            _renderDevice = new xt::render::XtOpenGL(_initParams.width, _initParams.height);
 #else
-		_renderDevice = new xt::render::XtDirectX11(_initParams.width, _initParams.height, _initParams.fullscreen);
+            _renderDevice = new xt::render::XtDirectX11(_initParams.width, _initParams.height, _initParams.fullscreen);
 #endif
 
-        if (!_renderDevice->init()) {
-            LOGMSG("Unable to init render device!");
-            return false;
-        }
+            if (!_renderDevice->init()) {
+                LOGMSG("Unable to init render device!");
+                return false;
+            }
 
-        /**
-         * @TODO: fix init & add check result
-         */
-        xt::logic::XtLogic::getInstance();
-        xt::modules::XtModuleManager::getInstance()->init();
+            /**
+             * @TODO: fix init & add check result
+             */
+            xt::logic::XtLogic::getInstance();
+            xt::modules::XtModuleManager::getInstance()->init();
+
+            _isInited = true;
+        }
+#if defined(XT_ANDROID) || defined(XT_IOS)
+        else
+        {
+              if (_renderDevice) {
+                  LOGMSG("*** Render : reload ***");
+                  return _renderDevice->reInit();
+              }
+        }
+#endif
 
         return true;
     }
