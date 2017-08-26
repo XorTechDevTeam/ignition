@@ -66,9 +66,12 @@ namespace xt {
 #include <functional>
 
 #if defined(XT_LINUX)
-#include <pthread.h>
-#include <unistd.h>
 #include <csignal>
+#include <unistd.h>
+#include <fcntl.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <pthread.h>
 
 #include <GLFW/glfw3.h>
 
@@ -138,3 +141,14 @@ using namespace glm;
 #endif
 
 #define XT_MAX_FILE_BUFFER 4096
+
+static String formatString(const char* fmt, ...) {
+    char buff[2048];
+
+    va_list args;
+    va_start(args, fmt);
+    vsprintf(buff, fmt, args);
+    va_end(args);
+
+    return String(buff);
+}

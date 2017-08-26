@@ -66,10 +66,10 @@ namespace xt {
     bool XtEngine::init(const XtDeviceParams &deviceParams) {
         if (!_isInited) {
             _initParams = deviceParams;
+            _fsManager = new XtFileSystemManager();     //этот менеджер должен быть инициилизирован ДО платформенного кода!
             _platform = new xt::platform::XtDefaultDevice();
             _inputManager = new xt::input::XtInputManager();
             _systemTime = new xt::time::XtSystemTime();
-            _fsManager = new XtFileSystemManager();
             _gameTime = nullptr;
             _lastFrameTime = _systemTime->getTime();
 

@@ -1,6 +1,6 @@
 #include "XtDefaultDevice.h"
-#include <Core/Render/OpenGL/XtOpenGL.h>
 #include <Core/XtEngine.h>
+#include <Core/Platform/Linux/XtLinuxFileSystem.h>
 
 namespace xt {
     namespace platform {
@@ -36,6 +36,8 @@ namespace xt {
             glfwSetWindowSizeCallback(_window, &XtDefaultDevice::glfwOnWindowResize);
             glfwSetScrollCallback(_window, &XtDefaultDevice::glfwOnScroll);
             glfwSetWindowCloseCallback(_window, &XtDefaultDevice::glfwCloseApplication);
+
+            XtEngine::getInstance()->getFileSystemManager()->addFileSystem(new xt::platform::XtLinuxFileSystem());
 
             return true;
         }

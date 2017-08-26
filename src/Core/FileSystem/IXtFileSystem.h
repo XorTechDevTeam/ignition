@@ -28,7 +28,7 @@ namespace filesystem {
          * @brief Получение списка файлов в данной файловой системе
          * @return сет из файлов в данной файловой системе
          */
-        virtual Set<String> getFiles() const = 0;
+        virtual Set<String> getFiles() const { return _fsCache; }
         /**
          * @brief Проверка существования файла
          * @param filename      - путь к файлу
@@ -64,7 +64,7 @@ namespace filesystem {
          * @param mode режим доступа
          * @return успешность операции
          */
-        virtual bool createFile(const String& filename, const int mode = XtFileMode::XT_WRITE | XtFileMode::XT_READ) = 0;
+        virtual bool createFile(const String& filename, const int mode) = 0;
         /**
          * @brief Асинхронное чтение файла в вектор байт
          * @param filename - имя файла
@@ -76,8 +76,8 @@ namespace filesystem {
                                     std::function<void(XtFileOperationError,
                                                        const String&,
                                                        const Vector<uint8_t>&)> dataCallback,
-                                    size_t offset = 0,
-                                    size_t length = 0) = 0;
+                                    size_t offset,
+                                    size_t length) = 0;
         /**
          * @brief Асинхронное чтение файла в строку
          * @param filename имя файла
@@ -89,8 +89,8 @@ namespace filesystem {
                                     std::function<void(XtFileOperationError,
                                                        const String&,
                                                        const String&)> dataCallback,
-                                    size_t offset = 0,
-                                    size_t length = 0) = 0;
+                                    size_t offset,
+                                    size_t length) = 0;
         /**
          * @brief Записывает в файл строку
          * @param file - имя файла
@@ -104,9 +104,9 @@ namespace filesystem {
         virtual XtFileOperationError writeFile(const String& file,
                                                const String& data,
                                                XtWriteMode mode,
-                                               size_t fileOffset = 0,
-                                               size_t bufferOffset = 0,
-                                               size_t bufferLength = 0) = 0;
+                                               size_t fileOffset,
+                                               size_t bufferOffset,
+                                               size_t bufferLength) = 0;
 
         String getFileSystemBaseDir() const { return _fsBaseDirectory; }
     protected:
