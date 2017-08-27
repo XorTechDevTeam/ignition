@@ -1,4 +1,10 @@
-package com.xtengine.XtAndroid;
+/**
+ *  This is part of XorTech Android Application
+ *
+ *  Copyright (C) XorTech Dev Team 2017
+ *  License: see LICENSE.md for details
+ */
+package $PACKAGE$;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,7 +14,7 @@ import android.view.WindowManager;
 import java.io.File;
 
 
-public class XTGLESActivity extends Activity {
+public class $APPLICATION$ extends Activity {
 
     XTGLES2View mView;
 

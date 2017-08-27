@@ -1,4 +1,10 @@
-package com.xtengine.XtAndroid;
+/**
+ *  This is part of XorTech Android Application
+ *
+ *  Copyright (C) XorTech Dev Team 2017
+ *  License: see LICENSE.md for details
+ */
+package $PACKAGE$;
 
 import android.content.Context;
 import android.graphics.PixelFormat;

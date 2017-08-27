@@ -1,5 +1,13 @@
 # Here you can define name of your project (engine name by default)
 XT_PROJECT=XorTech
+XT_APP_NAME=Xor Tech Demo
+XT_BUILD_MODE=DEBUG
+
+# Android
+XT_ANDROID_PACKAGE=com.xt.demo
+XT_ANDROID_MINSDK=23
+XT_ANDROID_TRGSDK=23
+#Targets
 
 all:
 	@echo "Usage: make (LINUX|ANDROID|WINDOWS|OSX|IOS)"
@@ -9,15 +17,22 @@ clean:
 	rm -rf build
 	mkdir build
 	@echo "Clean android"
-	cd android && ./gradlew clean
+	rm -f src/Core/Platform/Android/XtAndroidProject.h
+	rm -rf src/3rd/AngelScript/lib && mkdir src/3rd/AngelScript/lib && touch src/3rd/AngelScript/lib/delete.me
 
 LINUX:
 	cmake . -B./build/Linux -DPLATFORM:STRING="LINUX" -DPROJECT_NAME:STRING=${XT_PROJECT}
 	cd build/Linux && make
 
 ANDROID:
-	cd android && ./gradlew assembleDebug
-	adb install -r ./android/app/build/outputs/apk/app-debug.apk
+	python AndroidProject.py --name ${XT_PROJECT} 		 \
+				 --label "${XT_APP_NAME}"	 \
+				 --package ${XT_ANDROID_PACKAGE} \
+				 --minSdk ${XT_ANDROID_MINSDK} 	 \
+				 --trgSdk ${XT_ANDROID_TRGSDK}	 \
+				 --mode ${XT_BUILD_MODE}	 \
+				 --disarch x86 x86_64	\
+				 --install
 
 WIN32:
 	cmake . -B./build/Win32 -DPLATFORM:STRING="WIN32" -DPROJECT_NAME:STRING=${XT_PROJECT}

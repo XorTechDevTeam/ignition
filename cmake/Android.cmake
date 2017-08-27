@@ -5,7 +5,6 @@ list(APPEND XT_SOURCES
 set(XT_ANDROID_DEPS android log EGL GLESv2)
 
 macro(XtGenerate)
-    set(PROJECT_NAME XtAndroid)
     message(">> Build ${PROJECT_NAME}.so")
     list(APPEND XT_DEPS ${XT_ANDROID_DEPS})
     #TODO: Use project name here!

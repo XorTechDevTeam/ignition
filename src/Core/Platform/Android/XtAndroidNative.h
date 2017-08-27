@@ -11,13 +11,14 @@
 #include <GLES2/gl2ext.h>
 
 #include <XtCommon.h>
+#include <Core/Platform/Android/XtAndroidProject.h>
 
 extern "C" {
-    JNIEXPORT void JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtInit(JNIEnv * env, jobject obj,  jint width, jint height);
-    JNIEXPORT void JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtUpdate(JNIEnv * env, jobject obj);
-    JNIEXPORT void JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtOnPause(JNIEnv * env, jobject obj);
-    JNIEXPORT void JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtOnResume(JNIEnv * env, jobject obj);
-    JNIEXPORT void JNICALL Java_com_xtengine_XtAndroid_XtEngine_xtOnDestroy(JNIEnv * env, jobject obj);
+	XT_INIT_FUNC;
+	XT_UPDATE_FUNC;
+	XT_PAUSE_FUNC;
+	XT_RESUME_FUNC;
+	XT_DESTROY_FUNC;
 };
 
 #else

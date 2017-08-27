@@ -1,0 +1,33 @@
+/**
+ *	NOTICE: THIS IS AUTO GENERATED FILE FROM XtAndroidProject.h.in!
+ *			ALL YOUR CHANGES WILL BE OVERWRITTEN BY MAKEFILE!
+ *
+ *  GENERATED AT $DATETIME$ FOR PACKAGE $PACKAGE$
+ *  
+ *	TARGET APPLICATION $APPLICATION$
+ *
+ *	LICENSE: see details in LICENSE.md
+ */
+#pragma once
+
+#ifdef XT_ANDROID
+
+// Remove old decl
+#undef XT_BUILD_DATE
+
+#undef XT_INIT_FUNC
+#undef XT_UPDATE_FUNC
+#undef XT_PAUSE_FUNC
+#undef XT_RESUME_FUNC
+#undef XT_DESTROY_FUNC
+
+// Export functions for JNI
+#include <jni.h>
+#define XT_INIT_FUNC 	JNIEXPORT void JNICALL $CDECLPACKAGE$_XtEngine_xtInit(JNIEnv * env, jobject obj,  jint width, jint height)
+#define XT_UPDATE_FUNC 	JNIEXPORT void JNICALL $CDECLPACKAGE$_XtEngine_xtUpdate(JNIEnv * env, jobject obj)
+#define XT_PAUSE_FUNC	JNIEXPORT void JNICALL $CDECLPACKAGE$_XtEngine_xtOnPause(JNIEnv * env, jobject obj)
+#define XT_RESUME_FUNC	JNIEXPORT void JNICALL $CDECLPACKAGE$_XtEngine_xtOnResume(JNIEnv * env, jobject obj)
+#define XT_DESTROY_FUNC JNIEXPORT void JNICALL $CDECLPACKAGE$_XtEngine_xtOnDestroy(JNIEnv * env, jobject obj)
+#define XT_BUILD_DATE 	"Build at $DATETIME$ from commit $GITCOMMIT$ in branch $GITBRANCH$"
+
+#endif

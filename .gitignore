@@ -7,3 +7,5 @@ android/app/.*
 android/app/build
 cmake-build-debug
 cmake-build-debug/*
+# ignore result of generator
+src/Core/Platform/Android/XtAndroidProject.h
