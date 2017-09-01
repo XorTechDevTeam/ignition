@@ -6,11 +6,14 @@
  */
 package $PACKAGE$;
 
-public class XtEngine {
+import android.app.Activity;
 
+public class XtEngine {
 	static {
 		System.loadLibrary("$APPLICATION$");
 	}
+
+	public static Activity g_appActivity = null;
 
 	public static native void xtInit(int width, int height);
 	public static native void xtUpdate();

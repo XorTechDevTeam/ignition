@@ -33,3 +33,6 @@ android {
     }
 }
 
+dependencies {
+    //Our deps here
+}

@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="$PACKAGE$">
-  <uses-feature android:glEsVersion="0x00020000"/>
+  <!--
+      This is part of XorTech Android Application
+      
+      Copyright (C) XorTech Dev Team 2017
+      License: see LICENSE.md for details
+  -->
+  <!-- Declare SDK -->
+  <uses-sdk android:minSdkVersion="$MINSDK$" android:targetSdkVersion="$TRGSDK$" />
+  <!-- Require OpenGLES 2.0 -->
+  <uses-feature android:glEsVersion="0x00020000"/> <!-- TODO: Add $GLESVER$ build variable -->
+  <!-- Requrie internet -->
+  <!-- TODO: Add $ANDROIDDEPS$ build variable -->
+  <uses-permission android:name="android.permission.INTERNET" />
+  <!-- Require file IO -->
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <!-- Application settings -->
   <application
       android:allowBackup="false"
       android:fullBackupContent="false"

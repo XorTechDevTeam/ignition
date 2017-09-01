@@ -31,8 +31,7 @@ ANDROID:
 				 --minSdk ${XT_ANDROID_MINSDK} 	 \
 				 --trgSdk ${XT_ANDROID_TRGSDK}	 \
 				 --mode ${XT_BUILD_MODE}	 \
-				 --disarch x86 x86_64	\
-				 --install
+				 --disarch x86 x86_64
 
 WIN32:
 	cmake . -B./build/Win32 -DPLATFORM:STRING="WIN32" -DPROJECT_NAME:STRING=${XT_PROJECT}

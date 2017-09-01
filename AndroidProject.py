@@ -11,6 +11,7 @@
     --rebuild           - rebuild whole project
     --install           - start gradlew and install project after generation
     --disarch           - remove arch from build list
+    --exclude           - exclude source file from search
 
     Variables:
     $APPLICATION$   - App name
@@ -23,15 +24,18 @@
     $GITCOMMIT$     - current git commit
     $GITBRANCH$     - current git branch
 '''
-import sys
 import os
+import re
+import sys
 import string
-import argparse
 import shutil
+import fnmatch
+import argparse
 import datetime
 import subprocess
 
 __SCRIPT_VERSION__ = '0.0.1'
+__JAVA_SOURCE__    = '*.java'
 
 projectInfo = {
     'appname':  'XorTech',                          #Application name (without spaces)
@@ -47,10 +51,20 @@ projectInfo = {
                  "'arm64-v8a'"],                    #Supported abiFilters
     'rebuild':  False,                              #if true - remove all sources and generate new
     'mode':     'DEBUG',                            #Build mode (DEBUG|RELEASE)
-    'install':  False                               #Should install after generation (make & install)
+    'install':  False,                              #Should install after generation (make & install)
+    'javasrc': ['src/Core/Platform/Android/java']   #Java Sources
 }
 
 commonReplaceList = {}
+
+def findJavaSources(jPathList):
+    global __JAVA_SOURCE__
+    sources = []
+    for jPath in jPathList:
+        for root, dirs, files in os.walk(jPath):
+            for filename in fnmatch.filter(files, __JAVA_SOURCE__):
+                sources.append(os.path.join(root, filename))
+    return sources
 
 # --- GEN TASK ---
 def task_createDirectories():
@@ -199,12 +213,8 @@ def task_copyFiles():
     global projectInfo
     global commonReplaceList
 
-    sources = [
-        "src/Core/Platform/Android/java/$APPLICATION$.java",
-        "src/Core/Platform/Android/java/XTGLES2View.java",
-        "src/Core/Platform/Android/java/XtEngine.java"
-        # NOTE: Add here another sources
-    ]
+    sources = findJavaSources(projectInfo['javasrc'])
+    
     packageDir = "build/Android/app/src/main/java/" + projectInfo["package"].replace('.', '/') + "/"
 
     for source in sources:
@@ -271,7 +281,7 @@ def gradlew_start():
     os.chdir('./build/Android')
 
     pakIntent = '{0}.{1}'.format(projectInfo['package'], projectInfo['appname'])
-    buildCommands = [ './gradlew {0}'.format(target), 'adb install -f app/build/outputs/apk/{0}'.format(installTarget), 'adb shell am start -n {0}/{1}'.format(projectInfo['package'], pakIntent) ]
+    buildCommands = [ './gradlew {0}'.format(target), 'adb install -r app/build/outputs/apk/{0}'.format(installTarget), 'adb shell am start -n {0}/{1}'.format(projectInfo['package'], pakIntent) ]
     failed = False
     failedAt = ''
     callStack = ''

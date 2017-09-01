@@ -22,6 +22,8 @@ public class $APPLICATION$ extends Activity {
         super.onCreate(icicle);
         mView = new XTGLES2View(getApplication());
         setContentView(mView);
+
+        XtEngine.g_appActivity = this;  //Save current activity
     }
 
     @Override protected void onPause() {
@@ -37,5 +39,7 @@ public class $APPLICATION$ extends Activity {
     @Override protected void onDestroy() {
         super.onDestroy();
         XtEngine.xtOnDestroy();
+
+        XtEngine.g_appActivity = null;  //Release memory
     }
 }
